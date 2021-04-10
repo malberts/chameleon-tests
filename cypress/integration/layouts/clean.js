@@ -12,9 +12,9 @@ describe(`${layout}`, () => {
   })
 
   breakpoints.forEach((breakpoint) => {
-    it(`Snapshot ${breakpoint.name}`, () => {
+    it(breakpoint.name, () => {
       cy.viewport(breakpoint.width, breakpoint.height)
-      cy.compareSnapshot(`Snapshot ${breakpoint.name}`)
+      cy.compareSnapshot(breakpoint.name)
     })
   })
 })

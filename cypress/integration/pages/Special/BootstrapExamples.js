@@ -2,7 +2,7 @@
  * Tests related to Bootstrap components provided by the BootstrapExamples extension.
  */
 
-const breakpoints = require('../../fixtures/screens.json')
+const breakpoints = require('../../../fixtures/screens.json')
 
 beforeEach(() => {
   cy.visit(`/wiki/Special:BootstrapExamples`)
@@ -10,13 +10,13 @@ beforeEach(() => {
   cy.get('#bootstrap-version').should('not.be.empty')
 })
 
-describe('Bootstrap components', () => {
+describe('Bootstrap Examples', () => {
   describe(`Navbar`, () => {
     breakpoints.forEach((breakpoint) => {
       it(`Navbar: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(1)').within((section) => {
-          cy.compareSnapshot(`Navbars_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Navbars_${breakpoint.name}`)
 
           if (breakpoint.collapsedChameleon) {
             // Search not visible.
@@ -51,7 +51,7 @@ describe('Bootstrap components', () => {
       it(`Buttons: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(2)').within((section) => {
-          cy.compareSnapshot(`Buttons_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Buttons_${breakpoint.name}`)
 
           cy.get('#btnGroupDrop1').click()
           cy.get('[aria-labelledby="btnGroupDrop1"]')
@@ -72,7 +72,7 @@ describe('Bootstrap components', () => {
       it(`Typography: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(3)').within((section) => {
-          cy.compareSnapshot(`Buttons_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Typography_${breakpoint.name}`)
         })
       })
     })
@@ -83,7 +83,7 @@ describe('Bootstrap components', () => {
       it(`Tables: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(4)').within((section) => {
-          cy.compareSnapshot(`Tables_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Tables_${breakpoint.name}`)
         })
       })
     })
@@ -94,7 +94,7 @@ describe('Bootstrap components', () => {
       it(`Forms: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(5)').within((section) => {
-          cy.compareSnapshot(`Forms_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Forms_${breakpoint.name}`)
         })
       })
     })
@@ -105,7 +105,7 @@ describe('Bootstrap components', () => {
       it(`Navs: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(6)').within((section) => {
-          cy.compareSnapshot(`Forms_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Navs_${breakpoint.name}`)
 
           // Tabs
           cy.get('.nav-tabs').within(() => {
@@ -161,7 +161,7 @@ describe('Bootstrap components', () => {
       it(`Indicators: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(7)').within((section) => {
-          cy.compareSnapshot(`Indicators_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Indicators_${breakpoint.name}`)
         })
       })
     })
@@ -172,18 +172,74 @@ describe('Bootstrap components', () => {
       it(`Progress: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(8)').within((section) => {
-          cy.compareSnapshot(`Progress_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Progress_${breakpoint.name}`)
         })
       })
     })
   })
 
   describe(`Containers`, () => {
-    breakpoints.forEach((breakpoint) => {
-      it(`Containers: ${breakpoint.name}`, () => {
-        cy.viewport(breakpoint.width, breakpoint.height)
-        cy.get('.bs-docs-section:nth-of-type(9)').within((section) => {
-          cy.compareSnapshot(`Containers_${breakpoint.name}`)
+    describe('Jumbotron', () => {
+      breakpoints.forEach((breakpoint) => {
+        it(`Jumbotron: ${breakpoint.name}`, () => {
+          cy.viewport(breakpoint.width, breakpoint.height)
+          cy.get('.bs-docs-section:nth-of-type(9) .row:nth-of-type(1)').within(
+            (section) => {
+              cy.wrap(section).compareSnapshot(
+                `Containers_Jumbotron_${breakpoint.name}`
+              )
+            }
+          )
+        })
+      })
+    })
+    describe('List groups', () => {
+      breakpoints.forEach((breakpoint) => {
+        it(`List group: ${breakpoint.name}`, () => {
+          cy.viewport(breakpoint.width, breakpoint.height)
+          cy.get('.bs-docs-section:nth-of-type(9) .row:nth-of-type(3)').within(
+            (section) => {
+              cy.wrap(section).compareSnapshot(
+                `Containers_List_groups_${breakpoint.name}`
+              )
+            }
+          )
+        })
+      })
+    })
+    describe('Cards', () => {
+      breakpoints.forEach((breakpoint) => {
+        it.only(`Cards 1: ${breakpoint.name}`, () => {
+          cy.viewport(breakpoint.width, breakpoint.height)
+          cy.get(
+            '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(1)'
+          ).within((section) => {
+            cy.wrap(section).compareSnapshot(
+              `Containers_Cards_1_${breakpoint.name}`
+            )
+          })
+        })
+
+        it.only(`Cards 2: ${breakpoint.name}`, () => {
+          cy.viewport(breakpoint.width, breakpoint.height)
+          cy.get(
+            '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(2)'
+          ).within((section) => {
+            cy.wrap(section).compareSnapshot(
+              `Containers_Cards_2_${breakpoint.name}`
+            )
+          })
+        })
+
+        it.only(`Cards 3: ${breakpoint.name}`, () => {
+          cy.viewport(breakpoint.width, breakpoint.height)
+          cy.get(
+            '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(3)'
+          ).within((section) => {
+            cy.wrap(section).compareSnapshot(
+              `Containers_Cards_3_${breakpoint.name}`
+            )
+          })
         })
       })
     })
@@ -194,7 +250,7 @@ describe('Bootstrap components', () => {
       it(`Dialogs: ${breakpoint.name}`, () => {
         cy.viewport(breakpoint.width, breakpoint.height)
         cy.get('.bs-docs-section:nth-of-type(10)').within((section) => {
-          cy.compareSnapshot(`Dialogs_${breakpoint.name}`)
+          cy.wrap(section).compareSnapshot(`Dialogs_${breakpoint.name}`)
 
           // Popovers
           cy.get('[data-toggle="popover"][data-placement="bottom"]')
