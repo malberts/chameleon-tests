@@ -49,7 +49,7 @@ npm install
 $(npm bin)/cypress open
 ```
 
-### Run tests including UI snapshot checks:
+### Run tests including UI snapshot checks
 ```
 npm run test:actual
 ```
@@ -64,7 +64,18 @@ Base snapshots created using:
 
 |Project  |Version|Source|
 |---------|-------|------|
-|MediaWiki|1.35.2 ||
+|MediaWiki|1.35.2 |      |
 |Bootstrap extension|4.4.3|[`tag/4.4.3`](https://github.com/ProfessionalWiki/Bootstrap/releases/tag/4.4.3)|
 |Bootstrap library|4.3.1||
 |Chameleon|3.1.0|[`master`](https://github.com/ProfessionalWiki/chameleon/commit/8d44a743a1896667e75c4c6969a62d5035605ea7)|
+
+### Test directories
+|Directory|What it tests|
+|---------|-------------|
+|[components](cypress/integration/components)|[Chameleon components](https://github.com/ProfessionalWiki/chameleon/tree/master/src/Components)|
+|[layouts](cypress/integration/layouts)|[Chameleon layouts](https://github.com/ProfessionalWiki/chameleon/tree/master/layouts)|
+|[pages](cypress/integration/pages)|Page content only. Subfolders indicate titles with `:` seperation|
+
+Test names match:
+* Chameleon layout/component names
+* Page titles
