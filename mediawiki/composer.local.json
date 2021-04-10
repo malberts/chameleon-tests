@@ -1,0 +1,12 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/malberts/BootstrapExamples"
+    }
+  ],
+  "require": {
+    "mediawiki/bootstrap-examples": "dev-master",
+    "mediawiki/chameleon-skin": "dev-master"
+  }
+}

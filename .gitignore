@@ -12,3 +12,4 @@ test-results.xml
 # Docker
 mediawiki/extensions
 mediawiki/skins
+docker-compose.override.yml

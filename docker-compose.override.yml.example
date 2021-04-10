@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  mediawiki:
+    volumes:
+      - ./mediawiki/extensions/Bootstrap:/var/www/html/extensions/Bootstrap
+      - ./mediawiki/skins/chameleon:/var/www/html/skins/chameleon
