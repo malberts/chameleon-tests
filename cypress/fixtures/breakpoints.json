@@ -1,0 +1,44 @@
+[
+    {
+        "name": "xl",
+        "width": 1200,
+        "height": 675,
+        "collapsedChameleon": false,
+        "collapsedBootstrap": false
+    },
+    {
+        "name": "cmln",
+        "width": 1105,
+        "height": 622,
+        "collapsedChameleon": false,
+        "collapsedBootstrap": false
+    },
+    {
+        "name": "lg",
+        "width": 992,
+        "height": 558,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": false
+    },
+    {
+        "name": "md",
+        "width": 768,
+        "height": 432,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": true
+    },
+    {
+        "name": "sm",
+        "width": 576,
+        "height": 1024,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": true
+    },
+    {
+        "name": "xs",
+        "width": 360,
+        "height": 640,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": true
+    }
+]

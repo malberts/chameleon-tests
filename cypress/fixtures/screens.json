@@ -1,0 +1,30 @@
+[
+    {
+        "name": "xl-screen",
+        "width": 1920,
+        "height": 1080,
+        "collapsedChameleon": false,
+        "collapsedBootstrap": false
+    },
+    {
+        "name": "lg-screen",
+        "width": 1150,
+        "height": 768,
+        "collapsedChameleon": false,
+        "collapsedBootstrap": false
+    },
+    {
+        "name": "md-screen",
+        "width": 900,
+        "height": 768,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": true
+    },
+    {
+        "name": "xs-screen",
+        "width": 360,
+        "height": 640,
+        "collapsedChameleon": true,
+        "collapsedBootstrap": true
+    }
+]

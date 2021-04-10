@@ -3,9 +3,9 @@ node_modules
 package-lock.json
 
 # Cypress
-screenshots
-snapshots/actual
-snapshots/diff
+cypress/screenshots
+cypress/snapshots/actual
+cypress/snapshots/diff
 cypress.env.json
 test-results.xml
 
