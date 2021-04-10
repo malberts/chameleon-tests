@@ -1,8 +1,8 @@
 {
   "scripts": {
     "local": "$(npm bin)/cypress open",
-    "test:base": "$(npm bin)/cypress run --env type=base",
-    "test:actual": "$(npm bin)/cypress run --env type=actual"
+    "base": "$(npm bin)/cypress run --env type=base",
+    "test": "$(npm bin)/cypress run --env type=actual"
   },
   "devDependencies": {
     "cypress": "^7.0.1",

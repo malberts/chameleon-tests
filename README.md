@@ -46,17 +46,17 @@ npm install
 
 ### Run Cypress UI
 ```
-$(npm bin)/cypress open
+npm run local
 ```
 
 ### Run tests including UI snapshot checks
 ```
-npm run test:actual
+npm run test
 ```
 
 ### Update UI snapshots
 ```
-npm run test:base
+npm run base
 ```
 
 ### Snapshots
