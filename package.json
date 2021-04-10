@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "local": "$(npm bin)/cypress open",
     "test:base": "$(npm bin)/cypress run --env type=base",
     "test:actual": "$(npm bin)/cypress run --env type=actual"
   },
