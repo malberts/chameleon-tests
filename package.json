@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test:base": "$(npm bin)/cypress run --env type=base",
+    "test:actual": "$(npm bin)/cypress run --env type=actual"
+  },
+  "devDependencies": {
+    "cypress": "^7.0.1",
+    "cypress-visual-regression": "^1.5.7"
+  }
+}
