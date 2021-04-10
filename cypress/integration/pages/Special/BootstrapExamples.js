@@ -209,7 +209,7 @@ describe('Bootstrap Examples', () => {
     })
     describe('Cards', () => {
       breakpoints.forEach((breakpoint) => {
-        it.only(`Cards 1: ${breakpoint.name}`, () => {
+        it(`Cards 1: ${breakpoint.name}`, () => {
           cy.viewport(breakpoint.width, breakpoint.height)
           cy.get(
             '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(1)'
@@ -220,7 +220,7 @@ describe('Bootstrap Examples', () => {
           })
         })
 
-        it.only(`Cards 2: ${breakpoint.name}`, () => {
+        it(`Cards 2: ${breakpoint.name}`, () => {
           cy.viewport(breakpoint.width, breakpoint.height)
           cy.get(
             '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(2)'
@@ -231,7 +231,7 @@ describe('Bootstrap Examples', () => {
           })
         })
 
-        it.only(`Cards 3: ${breakpoint.name}`, () => {
+        it(`Cards 3: ${breakpoint.name}`, () => {
           cy.viewport(breakpoint.width, breakpoint.height)
           cy.get(
             '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(3)'
