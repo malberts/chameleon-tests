@@ -53,7 +53,7 @@ describe('Component: NavbarHorizontal/PageTools', () => {
           }
         })
 
-        it.only('Logged in menu items', () => {
+        it('Logged in menu items', () => {
           cy.wait(1000) // TODO: something is slow here
           cy.get('#mw-navigation a.navbar-userloggedin')
             .click()
