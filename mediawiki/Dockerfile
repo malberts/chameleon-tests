@@ -8,6 +8,7 @@ RUN php maintenance/install.php --server="http://localhost:8080" --dbtype sqlite
 RUN chown -R www-data:www-data /var/www/data/
 
 RUN { \
+    echo '$wgServer = getenv("MW_SERVER") ? getenv("MW_SERVER") : "http://localhost:8080";'; \
     echo '$wgArticlePath = "/wiki/$1";'; \
     echo '$wgUsePathInfo = true;'; \
     echo '$wgShowExceptionDetails = true;'; \

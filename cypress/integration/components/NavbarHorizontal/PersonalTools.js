@@ -12,6 +12,7 @@ describe('Component: NavbarHorizontal/PageTools', () => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
+            cy.wait(1000) // TODO: something is slow here
             cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
         })
@@ -49,6 +50,7 @@ describe('Component: NavbarHorizontal/PageTools', () => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
+            cy.wait(1000) // TODO: something is slow here
             cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
         })

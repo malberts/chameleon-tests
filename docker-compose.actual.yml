@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mediawiki:
+    environment:
+      MW_SERVER: 'http://mediawiki'
+
+  cypress:
+    image: cypress/included:7.0.1
+    depends_on:
+      - mediawiki
+    volumes:
+      - ./:/e2e
+    working_dir: /e2e
+    environment:
+      - CYPRESS_BASE_URL=http://mediawiki
+    entrypoint: ["cypress", "run", "--env", "type=actual"]
