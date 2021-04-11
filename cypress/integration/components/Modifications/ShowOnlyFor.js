@@ -7,11 +7,11 @@ describe(`Modification: ShowOnlyFor`, () => {
     })
 
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
-        before(() => {
-          cy.viewport(breakpoint.width, breakpoint.height)
-        })
-
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         it('NavbarHorizontal not shown', () => {
           cy.get('#mw-navigation').should('not.exist')
         })
@@ -30,11 +30,11 @@ describe(`Modification: ShowOnlyFor`, () => {
     })
 
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
-        before(() => {
-          cy.viewport(breakpoint.width, breakpoint.height)
-        })
-
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         it('NavbarHorizontal shown', () => {
           cy.get('#mw-navigation').should('be.visible')
         })

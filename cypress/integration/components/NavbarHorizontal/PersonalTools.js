@@ -3,14 +3,16 @@ const breakpoints = require('../../../fixtures/screens.json')
 describe('Component: NavbarHorizontal/PageTools', () => {
   describe('Logged out', () => {
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
-          cy.viewport(breakpoint.width, breakpoint.height)
-
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
-            cy.get('[data-toggle="collapse"]').click()
+            cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
         })
 
@@ -38,30 +40,32 @@ describe('Component: NavbarHorizontal/PageTools', () => {
     })
 
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
-          cy.viewport(breakpoint.width, breakpoint.height)
-
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
-            cy.get('[data-toggle="collapse"]').click()
+            cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
         })
 
-        it('Logged in menu items', () => {
-          cy.get('#mw-navigation').within((navbar) => {
-            cy.get('a.navbar-userloggedin').click()
-            cy.get('.p-personal-tools')
-              .should('be.visible')
-              .find('a')
-              .should('contain', 'AdminUser')
-              .should('contain', 'Talk')
-              .should('contain', 'Preferences')
-              .should('contain', 'Watchlist')
-              .should('contain', 'Contributions')
-              .should('contain', 'Log out')
-          })
+        it.only('Logged in menu items', () => {
+          cy.wait(1000) // TODO: something is slow here
+          cy.get('#mw-navigation a.navbar-userloggedin')
+            .click()
+
+          cy.get('#mw-navigation .p-personal-tools')
+            .should('be.visible')
+            .should('contain', 'AdminUser')
+            .should('contain', 'Talk')
+            .should('contain', 'Preferences')
+            .should('contain', 'Watchlist')
+            .should('contain', 'Contributions')
+            .should('contain', 'Log out')
         })
       })
     })

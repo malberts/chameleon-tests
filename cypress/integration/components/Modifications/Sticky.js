@@ -7,9 +7,12 @@ describe(`Modification: Sticky`, () => {
     })
 
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         before(() => {
-          cy.viewport(breakpoint.width, breakpoint.height)
           cy.scrollTo('topLeft')
         })
 
@@ -39,9 +42,12 @@ describe(`Modification: Sticky`, () => {
     })
 
     breakpoints.forEach((breakpoint) => {
-      describe(breakpoint.name, () => {
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
         before(() => {
-          cy.viewport(breakpoint.width, breakpoint.height)
           cy.scrollTo('topLeft')
         })
 
