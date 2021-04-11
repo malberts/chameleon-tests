@@ -6,7 +6,6 @@ const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin
  */
 module.exports = async (on, config) => {
   config.env.breakpoints = breakpoints
-  console.log('breakpoints', breakpoints)
   getCompareSnapshotsPlugin(on, config);
   return config
 }
