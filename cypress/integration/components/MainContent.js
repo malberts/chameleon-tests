@@ -1,14 +1,25 @@
 const breakpoints = require('../../fixtures/screens.json')
 
 describe('Component: MainContent', () => {
+  before(() => {
+    cy.visit('/wiki/Main_Page')
+  })
+
   breakpoints.forEach((breakpoint) => {
-    it(breakpoint.name, () => {
-      cy.viewport(breakpoint.width, breakpoint.height)
-      cy.visit('/wiki/Main_Page')
-      cy.get('#content').get('#firstHeading').contains('Main Page')
-      cy.get('#content')
-        .get('#bodyContent')
-        .contains('MediaWiki has been installed.')
+    describe(breakpoint.name, () => {
+      before(() => {
+        cy.viewport(breakpoint.width, breakpoint.height)
+      })
+
+      it('Title', () => {
+        cy.get('#content').get('#firstHeading').contains('Main Page')
+      })
+
+      it('Body', () => {
+        cy.get('#content')
+          .get('#bodyContent')
+          .contains('MediaWiki has been installed.')
+      })
     })
   })
 })
