@@ -2,7 +2,7 @@
  * Tests related to Bootstrap components provided by the BootstrapExamples extension.
  */
 
-const breakpoints = require('../../../fixtures/screens.json')
+const breakpoints = Cypress.env('breakpoints')
 
 describe('Special:BootstrapExamples', () => {
   breakpoints.forEach((breakpoint) => {

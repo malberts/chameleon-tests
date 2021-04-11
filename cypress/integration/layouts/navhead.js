@@ -1,4 +1,4 @@
-const breakpoints = require('../../fixtures/screens.json')
+const breakpoints = Cypress.env('breakpoints')
 
 let layout = 'navhead'
 
