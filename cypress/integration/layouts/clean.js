@@ -3,20 +3,19 @@ const breakpoints = require('../../fixtures/screens.json')
 let layout = 'clean'
 
 describe(`${layout}`, () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit(`/wiki/Main_Page?uselayout=${layout}`)
   })
 
-  it('HTML', () => {
-    cy.get('body').should('have.class', `layout-${layout}`)
-  })
-
   breakpoints.forEach((breakpoint) => {
-    it(breakpoint.name, () => {
-      cy.viewport(breakpoint.width, breakpoint.height)
-
-      // MainContent
-      cy.get('#content').compareSnapshot(`MainContent_${breakpoint.name}`)
+    let config = {
+      viewportWidth: breakpoint.width,
+      viewportHeight: breakpoint.height,
+    }
+    describe(breakpoint.name, config, () => {
+      it('MainContent', () => {
+        cy.get('#content').compareSnapshot(`MainContent_${breakpoint.name}`)
+      })
     })
   })
 })
