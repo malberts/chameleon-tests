@@ -13,7 +13,7 @@ const isInViewport = (_chai, utils) => {
     const rect = subject[0].getBoundingClientRect()
 
     this.assert(
-      (rect.top >= 0 && rect.bottom <= bottom),
+      rect.top >= 0 && rect.bottom <= bottom,
       'expected #{this} to be in viewport',
       'expected #{this} to not be in viewport',
       this._obj

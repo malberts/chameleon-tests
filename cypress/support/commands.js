@@ -1,9 +1,22 @@
-const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
+const compareSnapshotCommand = require('cypress-visual-regression/dist/command')
 
-compareSnapshotCommand();
+compareSnapshotCommand()
 
-Cypress.Commands.add('replaceTimestamps', () =>{
+Cypress.Commands.add('replaceTimestamps', () => {
   cy.contains('This page was last edited on ').then(($footer) => {
-    cy.wrap($footer).invoke('html', 'This page was last edited on 10 April 2021, at 12:34.')
+    cy.wrap($footer).invoke(
+      'html',
+      'This page was last edited on 10 April 2021, at 12:34.'
+    )
   })
 })
+
+Cypress.Commands.add(
+  'login',
+  (username = 'AdminUser', password = 'AdminPassword') => {
+    cy.visit('/wiki/Special:UserLogin')
+    cy.get('[name="wpName"]').type(username)
+    cy.get('[name="wpPassword"]').type(password)
+    cy.get('#wpLoginAttempt').click()
+  }
+)
