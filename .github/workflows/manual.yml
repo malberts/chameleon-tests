@@ -1,8 +1,6 @@
 name: Manual workflow
 
-on:
-  workflow_dispatch:
-    inputs: []
+on: [workflow_dispatch]
 
 jobs:
   start-and-test:
