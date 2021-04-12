@@ -15,3 +15,9 @@ jobs:
       - run: npm install
       - name: Start MediaWiki and run Cypress tests
         run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up --exit-code-from cypress
+      - name: Save snapshots
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: snapshots
+          path: cypress/snapshots
