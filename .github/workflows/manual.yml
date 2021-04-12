@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Docker logs
-        uses: jwalton/gh-docker-logs@v1
       - uses: actions/checkout@v2 
       - name: Use Node
         uses: actions/setup-node@v1
@@ -16,4 +14,6 @@ jobs:
           node-version: 15.x
       - run: npm install
       - name: Start MediaWiki and run Cypress tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up
+        run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up -d
+      - name: Docker logs
+        uses: jwalton/gh-docker-logs@v1
