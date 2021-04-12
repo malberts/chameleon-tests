@@ -14,6 +14,6 @@ jobs:
           node-version: 15.x
       - run: npm install
       - name: Start MediaWiki and run Cypress tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up -d
+        run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up --exit-code-from cypress
       - name: Docker logs
         uses: jwalton/gh-docker-logs@v1
