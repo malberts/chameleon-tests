@@ -1,5 +1,14 @@
 FROM prowiki/mediawiki:35
 
+# Xdebug
+RUN pecl install xdebug
+RUN { \
+        echo "[xdebug]"; \
+        echo "zend_extension=$(find /usr/local/lib/php/ -name xdebug.so)"; \
+        echo "xdebug.mode=debug"; \
+        echo "xdebug.discover_client_host = 1"; \
+    } > /usr/local/etc/php/conf.d/xdebug.ini;
+
 ##
 # Base Mediawiki
 ##
