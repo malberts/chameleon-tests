@@ -39,6 +39,8 @@ RUN ./load-pages.sh
 RUN { \
     echo 'wfLoadExtension( "Bootstrap" );'; \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
+    echo 'wfLoadExtension( "VisualEditor" );'; \
+    echo 'wfLoadExtension( "WikiEditor" );'; \
     echo 'wfLoadSkin( "chameleon" );'; \
     echo '$wgDefaultSkin = "chameleon";'; \
     echo '$egChameleonAvailableLayoutFiles = ['; \
