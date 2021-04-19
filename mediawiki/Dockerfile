@@ -41,6 +41,10 @@ RUN { \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
+    echo '$wgVirtualRestConfig["modules"]["parsoid"] = ['; \
+    echo '    "url" => "http://localhost/w/rest.php",'; \
+    echo '];'; \
+    echo 'wfLoadExtension( "Parsoid", "vendor/wikimedia/parsoid/extension.json" );'; \
     echo 'wfLoadSkin( "chameleon" );'; \
     echo '$wgDefaultSkin = "chameleon";'; \
     echo '$egChameleonAvailableLayoutFiles = ['; \
