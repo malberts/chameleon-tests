@@ -39,6 +39,7 @@ RUN ./load-pages.sh
 RUN { \
     echo 'wfLoadExtension( "Bootstrap" );'; \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
+    echo 'wfLoadExtension( "CiteThisPage" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
     echo '$wgVirtualRestConfig["modules"]["parsoid"] = ['; \
