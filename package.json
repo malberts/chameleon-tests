@@ -3,8 +3,8 @@
     "local": "$(npm bin)/cypress open",
     "base": "$(npm bin)/cypress run --env type=base",
     "test": "$(npm bin)/cypress run --env type=actual",
-    "docker:base": "docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.base.yml up",
-    "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.actual.yml up"
+    "docker:base": "docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.base.yml up --exit-code-from cypress",
+    "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.actual.yml up --exit-code-from cypress"
   },
   "devDependencies": {
     "cypress": "^7.0.1",
