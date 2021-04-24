@@ -30,8 +30,7 @@ services:
       - CYPRESS_BASE_URL=http://mediawiki
       - CYPRESS_API_URL=http://host.docker.internal:1234
       - CYPRESS_RECORD_KEY=chameleon-tests
-    command: "--parallel --record --ci-build-id ${BUILD_ID:-unnamed} --env type=actual --spec 'cypress/integration/layouts/clean.js'"
-    # scale: 2
+    command: "--parallel --record --ci-build-id ${BUILD_ID:-unnamed} --env type=actual"
 
     extra_hosts:
       - "host.docker.internal:host-gateway"
