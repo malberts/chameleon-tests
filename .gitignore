@@ -10,6 +10,9 @@ results
 cypress.env.json
 test-results.xml
 
+# sorry-cypress
+data
+
 # Docker
 mediawiki/extensions
 mediawiki/skins
