@@ -14,7 +14,7 @@ jobs:
           node-version: 15.x
       - run: npm install
       - name: Start MediaWiki and run Cypress tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.cy2.yml up --scale cypress=2 --exit-code-from director
+        run: docker-compose -f docker-compose.yml -f docker-compose.cy2.yml up --exit-code-from director
       - name: Save snapshots
         if: always()
         uses: actions/upload-artifact@v2
