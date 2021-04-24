@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2
       - name: Use Node
         uses: actions/setup-node@v1
         with:
           node-version: 15.x
       - run: npm install
       - name: Start MediaWiki and run Cypress tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.actual.yml up --exit-code-from cypress
+        run: docker-compose -f docker-compose.yml -f docker-compose.cy2.yml up --scale cypress=2 --exit-code-from director
       - name: Save snapshots
         if: always()
         uses: actions/upload-artifact@v2
