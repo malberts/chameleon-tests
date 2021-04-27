@@ -8,4 +8,4 @@ services:
     ports:
       - 8080:80
     environment:
-      MW_SERVER: 'http://localhost:8080'
+      MW_SERVER: '${MW_SERVER:-http://localhost:8080}'

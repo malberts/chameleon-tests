@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  cypress:
+    build:
+      context: ./
+      dockerfile: ./cypress_cy2/Dockerfile
+    volumes:
+      - ./:/e2e
+    working_dir: /e2e
+    environment:
+      - CYPRESS_PROJECT_ID=chameleon-tests
+      - CYPRESS_BASE_URL='${MW_SERVER:-http://mediawiki}'
+      - CYPRESS_API_URL=http://host.docker.internal:1234
+      - CYPRESS_RECORD_KEY=chameleon-tests
+    command: "--parallel --record --ci-build-id ${BUILD_ID:-unnamed} --env type=${TYPE:-actual}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

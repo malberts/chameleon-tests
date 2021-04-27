@@ -5,8 +5,6 @@ services:
     image: mongo:4.2
     volumes:
       - ./data/data-mongo-cypress:/data/db
-    logging:
-      driver: none
 
   redis:
     image: redis:alpine
