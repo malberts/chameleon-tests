@@ -6,10 +6,12 @@ package-lock.json
 cypress/screenshots
 cypress/snapshots/actual
 cypress/snapshots/diff
-mochawesome-report
-results
+cypress/results
 cypress.env.json
-test-results.xml
+
+# Mochawesome
+mochawesome-report
+mochawesome.json
 
 # sorry-cypress
 data

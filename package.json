@@ -11,7 +11,7 @@
     "up:test2": "npm run up:test -- --scale cypress=2",
     "prereport:copy": "mkdir -p mochawesome-report/screenshots",
     "report:copy": "cp -r cypress/snapshots/*/* mochawesome-report/screenshots/",
-    "report:generate": "npx mochawesome-merge 'cypress/results/results*.json' -o cypress/results/mochawesome.json && npx marge cypress/results/mochawesome.json",
+    "report:generate": "npx mochawesome-merge 'cypress/results/results*.json' -o mochawesome.json && npx marge mochawesome.json --no-showPassed",
     "report": "npm run report:copy && npm run report:generate"
   },
   "devDependencies": {

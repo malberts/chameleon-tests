@@ -41,10 +41,8 @@ Cypress.Screenshot.defaults({
           details.specName,
           `${details.name}.png`.replace('-actual', '-diff')
         )
-        const normalizeBasePath = basePath.replace(
-          'screenshots' + baseFolder,
-          ''
-        )
+        const normalizeBasePath =
+          'screenshots' + basePath.replace(baseFolder, '')
         const normalizeDiffPath =
           'screenshots' + diffPath.replace(diffFolder, '')
 
