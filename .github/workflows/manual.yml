@@ -13,14 +13,20 @@ jobs:
         with:
           node-version: 15.x
       - run: npm install
-      - name: Start MediaWiki and run Cypress tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.cy2.yml up --exit-code-from director
-      - name: Save snapshots
+      - name: Start MediaWiki
+        run: npm run up:mw -- -d
+      - name: Start sorry-cypress director
+        run: npm run up:director -- -d
+      - name: Run Cypress tests
+        run: npm run up:test2
+      - name: Generate report
+        run: npm run report
+      - name: Save report
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: snapshots
-          path: cypress/snapshots
+          name: report
+          path: mochawesome-report
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
