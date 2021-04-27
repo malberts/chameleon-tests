@@ -2,7 +2,7 @@ const breakpoints = Cypress.env('breakpoints')
 
 let layout = 'clean'
 
-describe(`${layout}`, () => {
+describe(`Layout: ${layout}`, () => {
   before(() => {
     cy.visit(`/wiki/Main_Page?uselayout=${layout}`)
   })
