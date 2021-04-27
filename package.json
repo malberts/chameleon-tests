@@ -2,6 +2,8 @@
   "scripts": {
     "local": "$(npm bin)/cypress open",
     "clean": "rm -rf cypress/results cypress/reports cypress/snapshots/actual cypress/snapshots/diff",
+    "build:mw": "docker-compose build",
+    "build:test": "docker-compose -f docker-compose.cypress.yml build",
     "up": "MW_SERVER=http://localhost:8080 docker-compose up",
     "up:mw": "MW_SERVER=http://mediawiki docker-compose up",
     "up:director": "docker-compose -f docker-compose.director.yml up",

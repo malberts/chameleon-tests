@@ -13,6 +13,10 @@ jobs:
         with:
           node-version: 15.x
       - run: npm install
+      - name: Build MediaWiki
+        run: npm run build:mw
+      - name: Build Cypress tests
+        run: npm run build:test
       - name: Start MediaWiki
         run: npm run up:mw -- -d
       - name: Start sorry-cypress director
