@@ -20,7 +20,7 @@ jobs:
       - name: Run Cypress tests
         run: npm run up:test2
       - name: Generate report
-        run: npm run report
+        run: npm run report -- --no-showPassed
       - name: Save report
         if: always()
         uses: actions/upload-artifact@v2
