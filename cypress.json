@@ -1,10 +1,12 @@
 {
   "baseUrl": "http://localhost:8080",
-  "screenshotsFolder": "./cypress/snapshots/actual",
+  "screenshotsFolder": "cypress/snapshots/actual",
   "trashAssetsBeforeRuns": true,
   "video": false,
   "env": {
-    "failSilently": false
+    "failSilently": false,
+    "SNAPSHOT_BASE_DIRECTORY": "cypress/snapshots/base",
+    "SNAPSHOT_DIFF_DIRECTORY": "cypress/snapshots/diff"
   },
   "viewportWidth": 1150,
   "viewportHeight": 650,
