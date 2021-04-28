@@ -4,7 +4,7 @@
 
 const breakpoints = Cypress.env('breakpoints')
 
-describe('Bootstrap: Navbar', () => {
+describe('Bootstrap: Navbars', () => {
   breakpoints.forEach((breakpoint) => {
     let config = {
       viewportWidth: breakpoint.width,
@@ -16,14 +16,24 @@ describe('Bootstrap: Navbar', () => {
         cy.get('#bootstrap-version').should('not.be.empty')
       })
 
-      it('Navbar', () => {
-        cy.get('.bs-docs-section:nth-of-type(1)').within((section) => {
-          cy.wrap(section).compareSnapshot(`Navbars_${breakpoint.name}`)
-        })
+      it('Navbar: Primary', () => {
+        cy.get('nav.bg-primary').compareSnapshot(
+          `Navbars_Primary_${breakpoint.name}`
+        )
+      })
+
+      it('Navbar: Dark', () => {
+        cy.get('nav.bg-dark').compareSnapshot(`Navbars_Dark_${breakpoint.name}`)
+      })
+
+      it('Navbar: Light', () => {
+        cy.get('nav.bg-light').compareSnapshot(
+          `Navbars_Light_${breakpoint.name}`
+        )
       })
 
       it('Navbar Dropdown', () => {
-        cy.get('.bs-docs-section:nth-of-type(1)').within((section) => {
+        cy.get('nav.bg-primary').within((section) => {
           if (breakpoint.collapsedChameleon) {
             // Search not visible.
             cy.get('[placeholder="Search"]').should('not.be.visible')
