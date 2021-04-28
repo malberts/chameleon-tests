@@ -34,6 +34,18 @@ describe('Bootstrap: Navs', () => {
         ).compareSnapshot(`Navs_Pills_Vertical_${breakpoint.name}`)
       })
 
+      it('Navs: Breadcrumbs', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(6) > div:nth-child(3) > div:nth-child(1) > .bs-component'
+        ).compareSnapshot(`Navs_Breadcrumbs_${breakpoint.name}`)
+      })
+
+      it('Navs: Pagination', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(6) > div:nth-child(3) > div:nth-child(2) > .bs-component'
+        ).compareSnapshot(`Navs_Pagination_${breakpoint.name}`)
+      })
+
       it('Navs: Tabs: Switch', () => {
         cy.get('.bs-docs-section:nth-of-type(6)').within((section) => {
           // Home tab
