@@ -42,6 +42,7 @@ RUN { \
     echo 'wfLoadExtension( "CiteThisPage" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
+    echo 'enableSemantics( "https://www.semantic-mediawiki.org/" );'; \
     echo '$wgVirtualRestConfig["modules"]["parsoid"] = ['; \
     echo '    "url" => "http://localhost/w/rest.php",'; \
     echo '];'; \
