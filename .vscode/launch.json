@@ -1,0 +1,14 @@
+{
+    "version": "0.0.1",
+    "configurations": [{
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "log": true,
+            "pathMappings": {
+                "/var/www/html/skins/chameleon": "${workspaceRoot}/mediawiki/skins/chameleon",
+            }
+        },
+    ]
+}
