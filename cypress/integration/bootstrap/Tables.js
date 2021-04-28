@@ -17,9 +17,9 @@ describe('Bootstrap: Tables', () => {
       })
 
       it('Tables', () => {
-        cy.get('.bs-docs-section:nth-of-type(4)').within((section) => {
-          cy.wrap(section).compareSnapshot(`Tables_${breakpoint.name}`)
-        })
+        cy.get('.bs-docs-section:nth-of-type(4) .bs-component').compareSnapshot(
+          `Tables_${breakpoint.name}`
+        )
       })
     })
   })
