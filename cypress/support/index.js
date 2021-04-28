@@ -16,21 +16,22 @@ Cypress.Screenshot.defaults({
     }
 
     cy.once('test:after:run', (test) => {
-      const normalizedScreenshotPath =
-        'screenshots' + details.path.replace(screenshotsFolder, '')
+      // Link screenshots only to failed tests.
+      if (test.state == 'failed') {
+        const normalizedScreenshotPath =
+          'screenshots' + details.path.replace(screenshotsFolder, '')
 
-      addContext(
-        { test },
-        {
-          title: normalizedScreenshotPath.includes('(failed)')
-            ? 'Failed screenshot'
-            : 'Actual',
-          value: normalizedScreenshotPath,
-        }
-      )
+        addContext(
+          { test },
+          {
+            title: normalizedScreenshotPath.includes('(failed)')
+              ? 'Failed screenshot'
+              : 'Actual',
+            value: normalizedScreenshotPath,
+          }
+        )
 
-      // Add diff and expected for normal screenshots.
-      if (!normalizedScreenshotPath.includes('(failed)')) {
+        // Add diff and expected for normal screenshots.
         const basePath = path.join(
           baseFolder,
           details.specName,
