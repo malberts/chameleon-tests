@@ -16,10 +16,34 @@ describe('Bootstrap: Progress', () => {
         cy.get('#bootstrap-version').should('not.be.empty')
       })
 
-      it('Progress', () => {
-        cy.get('.bs-docs-section:nth-of-type(8)').compareSnapshot(
-          `Progress_${breakpoint.name}`
-        )
+      it('Progress: Basic', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(8) .bs-component:nth-of-type(1)'
+        ).compareSnapshot(`Progress_Basic_${breakpoint.name}`)
+      })
+
+      it('Progress: Contextual', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(8) .bs-component:nth-of-type(2)'
+        ).compareSnapshot(`Progress_Contextual_${breakpoint.name}`)
+      })
+
+      it('Progress: Multiple', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(8) .bs-component:nth-of-type(3)'
+        ).compareSnapshot(`Progress_Multiple_${breakpoint.name}`)
+      })
+
+      it('Progress: Striped', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(8) .bs-component:nth-of-type(4)'
+        ).compareSnapshot(`Progress_Striped_${breakpoint.name}`)
+      })
+
+      it('Progress: Animated', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(8) .bs-component:nth-of-type(5)'
+        ).compareSnapshot(`Progress_Animated_${breakpoint.name}`)
       })
     })
   })
