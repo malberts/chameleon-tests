@@ -16,11 +16,32 @@ describe('Bootstrap: Dialogs', () => {
         cy.get('#bootstrap-version').should('not.be.empty')
       })
 
-      it('Dialogs', () => {
-        cy.get('.bs-docs-section:nth-of-type(10)').within((section) => {
-          cy.wrap(section).compareSnapshot(`Dialogs_${breakpoint.name}`)
+      it('Dialogs: Modals', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(10) > div:nth-of-type(2) > div:nth-of-type(1) .bs-component'
+        ).compareSnapshot(`Dialogs_Modals_${breakpoint.name}`)
+      })
 
-          // Popovers
+      it('Dialogs: Popovers', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(10) > div:nth-of-type(2) > div:nth-of-type(2) .bs-component:nth-of-type(1)'
+        ).compareSnapshot(`Dialogs_Popovers_${breakpoint.name}`)
+      })
+
+      it('Dialogs: Tooltips', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(10) > div:nth-of-type(2) > div:nth-of-type(2) .bs-component:nth-of-type(2)'
+        ).compareSnapshot(`Dialogs_Tooltips_${breakpoint.name}`)
+      })
+
+      it('Dialogs: Toasts', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(10) > div:nth-of-type(2) > div:nth-of-type(2) .bs-component:nth-of-type(3)'
+        ).compareSnapshot(`Dialogs_Toasts_${breakpoint.name}`)
+      })
+
+      it('Dialogs: Popovers: Dropdown', () => {
+        cy.get('.bs-docs-section:nth-of-type(10)').within((section) => {
           cy.get('[data-toggle="popover"][data-placement="bottom"]')
             .click()
             .root()
@@ -36,8 +57,11 @@ describe('Bootstrap: Dialogs', () => {
             .within((body) => {
               cy.get('.bs-popover-bottom').should('not.exist')
             })
+        })
+      })
 
-          // Tooltips
+      it('Dialogs: Tooltips: Dropdown', () => {
+        cy.get('.bs-docs-section:nth-of-type(10)').within((section) => {
           cy.get('[data-toggle="tooltip"][data-placement="bottom"]')
             .trigger('mouseover')
             .root()
