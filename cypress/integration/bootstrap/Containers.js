@@ -16,38 +16,48 @@ describe('Bootstrap: Containers', () => {
         cy.get('#bootstrap-version').should('not.be.empty')
       })
 
-      describe(`Containers`, () => {
-        it('Jumbotron', () => {
-          cy.get(
-            '.bs-docs-section:nth-of-type(9) .row:nth-of-type(1)'
-          ).compareSnapshot(`Containers_Jumbotron_${breakpoint.name}`)
-        })
+      it('Containers: Jumbotron', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) > div:nth-of-type(1) .bs-component'
+        ).compareSnapshot(`Containers_Jumbotron_${breakpoint.name}`)
+      })
 
-        it('List group', () => {
-          cy.get(
-            '.bs-docs-section:nth-of-type(9) .row:nth-of-type(3)'
-          ).compareSnapshot(`Containers_List_groups_${breakpoint.name}`)
-        })
+      it('Containers: List groups', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(1) .bs-component'
+        ).compareSnapshot(`Containers_List_groups_${breakpoint.name}`)
+      })
 
-        describe('Cards', () => {
-          it('Cards 1', () => {
-            cy.get(
-              '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(1)'
-            ).compareSnapshot(`Containers_Cards_1_${breakpoint.name}`)
-          })
+      it('Containers: List groups: Interactive', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(2) .bs-component'
+        ).compareSnapshot(
+          `Containers_List_groups_Interactive_${breakpoint.name}`
+        )
+      })
 
-          it('Cards 2', () => {
-            cy.get(
-              '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(2)'
-            ).compareSnapshot(`Containers_Cards_2_${breakpoint.name}`)
-          })
+      it('Containers: List groups: Full', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) > div:nth-of-type(3) > div:nth-of-type(3) .bs-component'
+        ).compareSnapshot(`Containers_List_groups_Full_${breakpoint.name}`)
+      })
 
-          it('Cards 3', () => {
-            cy.get(
-              '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(3)'
-            ).compareSnapshot(`Containers_Cards_3_${breakpoint.name}`)
-          })
-        })
+      it('Containers: Cards: Filled', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(1) .bs-component'
+        ).compareSnapshot(`Containers_Cards_Filled_${breakpoint.name}`)
+      })
+
+      it('Containers: Cards: Outline', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(2) .bs-component'
+        ).compareSnapshot(`Containers_Cards_Outline_${breakpoint.name}`)
+      })
+
+      it('Containers: Cards: Full', () => {
+        cy.get(
+          '.bs-docs-section:nth-of-type(9) .row:nth-of-type(5) > div:nth-of-type(3) .bs-component'
+        ).compareSnapshot(`Containers_Cards_Full_${breakpoint.name}`)
       })
     })
   })
