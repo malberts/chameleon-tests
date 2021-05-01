@@ -4,6 +4,7 @@ describe(`Modification: Sticky`, () => {
   describe('Sticky', () => {
     before(() => {
       cy.visit(`/wiki/Special:Version?uselayout=stickyhead`)
+      cy.get('.smw-entity-examiner').should('not.exist')
     })
 
     breakpoints.forEach((breakpoint) => {
@@ -39,6 +40,7 @@ describe(`Modification: Sticky`, () => {
   describe('Not Sticky', () => {
     before(() => {
       cy.visit(`/wiki/Special:Version?uselayout=navhead`)
+      cy.get('.smw-entity-examiner').should('not.exist')
     })
 
     breakpoints.forEach((breakpoint) => {

@@ -31,37 +31,39 @@ Cypress.Screenshot.defaults({
           }
         )
 
-        // Add diff and expected for normal screenshots.
-        const basePath = path.join(
-          baseFolder,
-          details.specName,
-          `${details.name}.png`.replace('-actual', '-base')
-        )
-        const diffPath = path.join(
-          diffFolder,
-          details.specName,
-          `${details.name}.png`.replace('-actual', '-diff')
-        )
-        const normalizeBasePath =
-          'screenshots' + basePath.replace(baseFolder, '')
-        const normalizeDiffPath =
-          'screenshots' + diffPath.replace(diffFolder, '')
+        // Don't log diff and expected for the Cypress failed screenshot.
+        if (!normalizedScreenshotPath.includes('(failed)')) {
+          const basePath = path.join(
+            baseFolder,
+            details.specName,
+            `${details.name}.png`.replace('-actual', '-base')
+          )
+          const diffPath = path.join(
+            diffFolder,
+            details.specName,
+            `${details.name}.png`.replace('-actual', '-diff')
+          )
+          const normalizeBasePath =
+            'screenshots' + basePath.replace(baseFolder, '')
+          const normalizeDiffPath =
+            'screenshots' + diffPath.replace(diffFolder, '')
 
-        addContext(
-          { test },
-          {
-            title: 'Diff',
-            value: normalizeDiffPath,
-          }
-        )
+          addContext(
+            { test },
+            {
+              title: 'Diff',
+              value: normalizeDiffPath,
+            }
+          )
 
-        addContext(
-          { test },
-          {
-            title: 'Expected',
-            value: normalizeBasePath,
-          }
-        )
+          addContext(
+            { test },
+            {
+              title: 'Expected',
+              value: normalizeBasePath,
+            }
+          )
+        }
       }
     })
   },

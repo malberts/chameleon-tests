@@ -3,6 +3,7 @@ const breakpoints = Cypress.env('breakpoints')
 describe('Component: MainContent', () => {
   before(() => {
     cy.visit('/wiki/Main_Page')
+    cy.get('.smw-entity-examiner').should('not.exist')
   })
 
   breakpoints.forEach((breakpoint) => {

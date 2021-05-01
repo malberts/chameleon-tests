@@ -10,6 +10,7 @@ describe('Component: NavbarHorizontal/PageTools', () => {
       describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
+          cy.get('.smw-entity-examiner').should('not.exist')
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
             cy.wait(1000) // TODO: something is slow here
@@ -48,6 +49,7 @@ describe('Component: NavbarHorizontal/PageTools', () => {
       describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
+          cy.get('.smw-entity-examiner').should('not.exist')
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
             cy.wait(1000) // TODO: something is slow here

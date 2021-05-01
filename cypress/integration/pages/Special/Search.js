@@ -5,6 +5,7 @@ describe(`Special:Search`, () => {
     describe(breakpoint.name, () => {
       before(() => {
         cy.visit('/wiki/Special:Search')
+        cy.get('.smw-entity-examiner').should('not.exist')
         cy.viewport(breakpoint.width, breakpoint.height)
       })
 

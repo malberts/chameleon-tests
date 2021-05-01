@@ -13,6 +13,7 @@ describe('Bootstrap: Tables', () => {
     describe(breakpoint.name, config, () => {
       before(() => {
         cy.visit('/wiki/Special:BootstrapExamples')
+        cy.get('.smw-entity-examiner').should('not.exist')
         cy.get('#bootstrap-version').should('not.be.empty')
       })
 
