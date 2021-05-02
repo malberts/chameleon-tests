@@ -22,6 +22,9 @@ describe(`Modification: Sticky`, () => {
           cy.get('[id^="mw-navigation"]:nth-of-type(1)').should('be.inViewport')
           // Primary Navigation
           cy.get('[id^="mw-navigation"]:nth-of-type(2)').should('be.inViewport')
+          cy.screenshot(`Initial_Sticky_${breakpoint.name}`, {
+            capture: 'viewport',
+          })
         })
 
         it('Scrolled Sticky', () => {
@@ -32,6 +35,9 @@ describe(`Modification: Sticky`, () => {
           )
           // Primary Navigation
           cy.get('[id^="mw-navigation"]:nth-of-type(2)').should('be.inViewport')
+          cy.screenshot(`Scrolled_Sticky_${breakpoint.name}`, {
+            capture: 'viewport',
+          })
         })
       })
     })
@@ -56,12 +62,18 @@ describe(`Modification: Sticky`, () => {
         it('Initial Not Sticky', () => {
           // Primary Navigation
           cy.get('#mw-navigation').should('be.inViewport')
+          cy.screenshot(`Initial_Not_Sticky_${breakpoint.name}`, {
+            capture: 'viewport',
+          })
         })
 
         it('Scrolled Not Sticky', () => {
           cy.scrollTo('bottomLeft')
           // Primary Navigation
           cy.get('#mw-navigation').should('not.be.inViewport')
+          cy.screenshot(`Scrolled_Not_Sticky_${breakpoint.name}`, {
+            capture: 'viewport',
+          })
         })
       })
     })
