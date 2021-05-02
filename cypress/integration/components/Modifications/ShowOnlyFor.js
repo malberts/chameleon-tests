@@ -26,8 +26,8 @@ describe(`Modification: ShowOnlyFor`, () => {
 
   describe('With permission', () => {
     before(() => {
-      cy.visit(`/wiki/Main_Page?uselayout=clean`)
       cy.login()
+      cy.visit(`/wiki/Main_Page?uselayout=clean`)
       cy.get('.smw-entity-examiner').should('not.exist')
     })
 
