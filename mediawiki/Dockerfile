@@ -34,6 +34,11 @@ COPY ./mediawiki/pages pages
 RUN ./load-pages.sh
 
 ##
+# Extra Chamelon layouts
+##
+COPY ./mediawiki/layouts ./layouts
+
+##
 # Dependencies
 ##
 RUN { \
@@ -55,6 +60,7 @@ RUN { \
     echo '    "fixedhead"  => __DIR__ . "/skins/chameleon/layouts/fixedhead.xml",'; \
     echo '    "stickyhead" => __DIR__ . "/skins/chameleon/layouts/stickyhead.xml",'; \
     echo '    "clean"      => __DIR__ . "/skins/chameleon/layouts/clean.xml",'; \
+    echo '    "dirty"      => __DIR__ . "/layouts/dirty.xml",'; \
     echo '];'; \
 } >> LocalSettings.php;
 
