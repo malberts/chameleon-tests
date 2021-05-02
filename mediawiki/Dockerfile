@@ -20,6 +20,7 @@ RUN { \
     echo '$wgServer = getenv("MW_SERVER") ? getenv("MW_SERVER") : "http://localhost:8080";'; \
     echo '$wgArticlePath = "/wiki/$1";'; \
     echo '$wgUsePathInfo = true;'; \
+    echo '$wgEnableUploads = true;'; \
     echo '$wgShowExceptionDetails = true;'; \
     echo '$wgShowDBErrorBacktrace = true;'; \
     # echo '$wgDevelopmentWarnings = true;'; \
@@ -31,7 +32,19 @@ RUN { \
 ##
 COPY ./mediawiki/load-pages.sh load-pages.sh
 COPY ./mediawiki/pages pages
-RUN ./load-pages.sh
+RUN ./load-pages.sh \
+    && rm -r pages \
+    && rm load-pages.sh
+
+##
+# Imags
+##
+COPY ./mediawiki/images /tmp/images
+RUN php maintenance/importImages.php /tmp/images \
+    && chown -R www-data:www-data images \
+#     && chmod -R 777 images \
+     && rm -r /tmp/images
+
 
 ##
 # Extra Chamelon layouts
