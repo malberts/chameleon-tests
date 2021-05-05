@@ -1,12 +1,16 @@
 ==Image==
-[[File:Chameleon.png|alt=An alternative thumbnailed chameleon|thumb|A thumbnailed chameleon]]
-[[File:Chameleon.png|alt=An alternative framed chameleon|frame|A framed chameleon]]
-[[File:Chameleon.png|alt=An alternative frameless chameleon|frameless]]
-[[File:Chameleon.png|alt=An alternative bordered chameleon|border|640x640px]]
+<div id="image-thumb">[[File:Chameleon.png|alt=An alternative thumbnailed chameleon|thumb|A thumbnailed chameleon]]</div>
+
+<div id="image-frame">[[File:Chameleon.png|alt=An alternative framed chameleon|frame|A framed chameleon]]</div>
+
+<div id="image-frameless">[[File:Chameleon.png|alt=An alternative frameless chameleon|frameless]]</div>
+
+<div id="image-border">[[File:Chameleon.png|alt=An alternative bordered chameleon|border|640x640px]]</div>
 
 ==Table==
 
 ===Wikitable===
+<div id="table-wikitable">
 {| class="wikitable"
 |+
 Wikitable
@@ -30,8 +34,10 @@ Wikitable
 |
 |Cell 3.4
 |}
+</div>
 
 ===Plain table===
+<div id="table-plain">
 {|
 |+
 Plain table
@@ -55,8 +61,10 @@ Plain table
 |
 | Cell 3.4
 |}
+</div>
 
 ===Bootstrap table===
+<div id="table-bootstrap">
 {| class="table"
 |+
 Bootstrap table
@@ -81,7 +89,9 @@ Bootstrap table
 |
 |Cell 3.4
 |}
+</div>
 
+<div id="headings">
 ==Headings==
 
 ===Sub-heading 1===
@@ -91,21 +101,29 @@ Bootstrap table
 =====Sub-heading 3=====
 
 ======Sub-heading 4======
+</div>
 
 ==Typography==
 
 ===Format paragraph ===
 
 ====Paragraph====
+<div id="type-paragraph">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet quam eget elit convallis venenatis in finibus ipsum. Donec luctus pharetra lectus in ultrices. Proin non nisi est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas varius tortor nibh, consequat bibendum metus scelerisque aliquet.
+</div>
 
 ====Blockquote====
+<div id="type-blockquote">
 <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet quam eget elit convallis venenatis in finibus ipsum. Donec luctus pharetra lectus in ultrices. Proin non nisi est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas varius tortor nibh, consequat bibendum metus scelerisque aliquet.</blockquote>
+</div>
 
 ====Preformatted====
+<div id="type-preformatted">
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet quam eget elit convallis venenatis in finibus ipsum. Donec luctus pharetra lectus in ultrices. Proin non nisi est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas varius tortor nibh, consequat bibendum metus scelerisque aliquet.
+</div>
 
 ===Style text===
+<div id="type-style">
 Bold: Lorem '''ipsum dolor sit amet, consectetur adipiscing''' elit.
 
 Italic: Lorem ''ipsum dolor sit amet, consectetur adipiscing'' elit.
@@ -125,18 +143,22 @@ Language: Lorem <span dir="ltr" lang="la">ipsum dolor sit amet, consectetur adip
 Big: Lorem <big>ipsum dolor sit amet, consectetur adipiscing</big> elit.
 
 Small: Lorem <small>ipsum dolor sit amet, consectetur adipiscing</small> elit.
+</div>
 
 ===Link===
+<div id="type-link">
 [[Bootstrap|Internal]]
 
 [[Testing|Internal missing]]
 
 [https://github.com/ProfessionalWiki/chameleon/ External]
+</div>
 
 ==Lists==
 
 ===Unordered list===
 
+<div id="list-ul">
 *Bullet 1
 *Bullet 2
 **Bullet 2.1
@@ -145,9 +167,11 @@ Small: Lorem <small>ipsum dolor sit amet, consectetur adipiscing</small> elit.
 *#Bullet 3.1
 *#Bullet 3.2
 *Bullet 4
+</div>
 
 ===Ordered list===
 
+<div id="list-ol">
 #Bullet 1
 #Bullet 2
 ##Bullet 2.1
@@ -156,3 +180,4 @@ Small: Lorem <small>ipsum dolor sit amet, consectetur adipiscing</small> elit.
 #*Bullet 3.1
 #*Bullet 3.2
 #Bullet 4
+</div>
