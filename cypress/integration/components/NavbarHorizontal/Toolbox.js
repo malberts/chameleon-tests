@@ -22,6 +22,7 @@ describe('Component: NavbarHorizontal: Toolbox', () => {
         cy.wrap(items[5]).should('have.text', 'Page information')
         cy.wrap(items[6]).should('have.text', 'Cite this page')
         cy.wrap(items[7]).should('have.text', 'Browse properties')
+        // Issue: https://github.com/ProfessionalWiki/chameleon/issues/225
         cy.wrap(items).should('have.length', 8)
       })
   })
