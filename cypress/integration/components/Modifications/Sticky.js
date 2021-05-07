@@ -43,6 +43,33 @@ describe(`Modification: Sticky`, () => {
     })
   })
 
+  describe('Sticky: Fragment', () => {
+    // Issue: https://github.com/ProfessionalWiki/chameleon/issues/139
+    breakpoints.forEach((breakpoint) => {
+      before(() => {
+      })
+
+      let config = {
+        viewportWidth: breakpoint.width,
+        viewportHeight: breakpoint.height,
+      }
+      describe(breakpoint.name, config, () => {
+        it('Initial Sticky', () => {
+          cy.visit('/wiki/Special:Version?uselayout=stickyhead#mw-version-ext')
+          cy.get('.smw-entity-examiner').should('not.exist')
+
+          // Secondary Navigation
+          cy.get('[id^="mw-navigation"]:nth-of-type(1)').should('not.be.inViewport')
+          // Primary Navigation
+          cy.get('[id^="mw-navigation"]:nth-of-type(2)').should('be.inViewport')
+          cy.screenshot(`Initial_Sticky_Fragment_${breakpoint.name}`, {
+            capture: 'viewport',
+          })
+        })
+      })
+    })
+  })
+
   describe('Not Sticky', () => {
     before(() => {
       cy.visit(`/wiki/Special:Version?uselayout=navhead`)
