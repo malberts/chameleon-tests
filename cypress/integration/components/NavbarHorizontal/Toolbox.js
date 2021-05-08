@@ -1,29 +1,81 @@
 const breakpoints = Cypress.env('breakpoints')
 
 describe('Component: NavbarHorizontal: Toolbox', () => {
-  before(() => {
-    cy.visit('/wiki/Main_Page?uselayout=standard')
-    cy.get('.smw-entity-examiner').should('not.exist')
+  context('Page', () => {
+    before(() => {
+      cy.visit('/wiki/Main_Page?uselayout=standard')
+      cy.get('.smw-entity-examiner').should('not.exist')
+      // Open Toolbox dropdown.
+      cy.get('.p-tb-dropdown')
+        .click()
+        .get('.dropdown-menu.show')
+        .should('be.visible')
+    })
+
+    it('Count', () => {
+      // Issue: https://github.com/ProfessionalWiki/chameleon/issues/225
+      cy.get('.p-tb-dropdown .dropdown-menu.show')
+        .children()
+        .should('have.length', 8)
+    })
+
+    it('What links here', () => {
+      cy.get('#t-whatlinkshere').should('be.visible')
+    })
+
+    it('Related changes', () => {
+      cy.get('#t-recentchangeslinked').should('be.visible')
+    })
+
+    it('Special pages', () => {
+      cy.get('#t-specialpages').should('be.visible')
+    })
+
+    it('Printable version', () => {
+      cy.get('#t-print').should('be.visible')
+    })
+
+    it('Permanent link', () => {
+      cy.get('#t-permalink').should('be.visible')
+    })
+
+    it('Page information', () => {
+      cy.get('#t-info').should('be.visible')
+    })
+
+    it('Cite this page', () => {
+      cy.get('#t-cite').should('be.visible')
+    })
+
+    it('Browse properties', () => {
+      cy.get('#t-smwbrowselink').should('be.visible')
+    })
   })
 
-  it('Items', () => {
-    cy.get('.p-tb-dropdown')
-      .click()
-      .get('.dropdown-menu.show')
-      .should('be.visible')
-      .children()
-      .should('have.length.at.least', 8)
-      .then((items) => {
-        cy.wrap(items[0]).should('have.text', 'What links here')
-        cy.wrap(items[1]).should('have.text', 'Related changes')
-        cy.wrap(items[2]).should('have.text', 'Special pages')
-        cy.wrap(items[3]).should('have.text', 'Printable version')
-        cy.wrap(items[4]).should('have.text', 'Permanent link')
-        cy.wrap(items[5]).should('have.text', 'Page information')
-        cy.wrap(items[6]).should('have.text', 'Cite this page')
-        cy.wrap(items[7]).should('have.text', 'Browse properties')
-        // Issue: https://github.com/ProfessionalWiki/chameleon/issues/225
-        cy.wrap(items).should('have.length', 8)
-      })
+  context('Special Page', () => {
+    before(() => {
+      cy.visit('/wiki/Special:UserLogin?uselayout=standard')
+      cy.get('.smw-entity-examiner').should('not.exist')
+      // Open Toolbox dropdown.
+      cy.get('.p-tb-dropdown')
+        .click()
+        .get('.dropdown-menu.show')
+        .should('be.visible')
+    })
+
+    it('Count', () => {
+      // Issue: https://github.com/ProfessionalWiki/chameleon/issues/225
+      cy.get('.p-tb-dropdown .dropdown-menu.show')
+        .children()
+        .should('have.length', 2)
+    })
+
+    it('Special pages', () => {
+      cy.get('#t-specialpages').should('be.visible')
+    })
+
+    it('Printable version', () => {
+      cy.get('#t-print').should('be.visible')
+    })
   })
 })
