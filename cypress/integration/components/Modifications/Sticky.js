@@ -46,9 +46,6 @@ describe(`Modification: Sticky`, () => {
   describe('Sticky: URI Fragment', () => {
     // Issue: https://github.com/ProfessionalWiki/chameleon/issues/139
     breakpoints.forEach((breakpoint) => {
-      before(() => {
-      })
-
       let config = {
         viewportWidth: breakpoint.width,
         viewportHeight: breakpoint.height,
