@@ -6,6 +6,26 @@ Automated UI tests for the [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki)
 
 It provides a base MediaWiki instance using [Docker Compose](https://docs.docker.com/compose/).
 
+## Table of contents
+
+- [Installation](#installation)
+- [Base MediaWiki](#base-mediawiki)
+  - [Build and run MediaWiki instance](#build-and-run-mediawiki-instance)
+  - [Reset MediaWiki instance](#reset-mediawiki-instance)
+- [MediaWiki customisations](#mediawiki-customisations)
+  - [Add custom Bootstrap or Chameleon](#add-custom-bootstrap-or-chameleon)
+- [Cypress](#cypress)
+  - [Run with Cypress UI](#run-with-cypress-ui)
+  - [Run with Cypress](#run-with-cypress)
+  - [Run with cy2](#run-with-cy2)
+  - [Run with Docker browser](#run-with-docker-browser)
+  - [Report](#report)
+  - [Update UI snapshots](#update-ui-snapshots)
+  - [Snapshots](#snapshots)
+  - [Test directories](#test-directories)
+
+---
+
 ## Installation
 
 Requirements:
@@ -115,6 +135,7 @@ Repeat the following in a separate terminal for each parallel execution
 ```
 npm run cy2 -- --ci-build-id some-id
 ```
+
 Replace `some-id` with a unique value when starting a new full execution, but use the same value for each separate parallel execution per full execution.
 
 ### Run with Docker browser
@@ -126,6 +147,7 @@ Terminal 1: Run MediaWiki
 ```
 npm run up:mw
 ```
+
 (Note this starts a MediaWiki instance accessible by the Docker Compose network and won't work correctly when accessed locally)
 
 Terminal 2: Run sorry-cypress director
