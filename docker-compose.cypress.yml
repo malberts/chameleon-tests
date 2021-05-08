@@ -9,7 +9,6 @@ services:
       - ./:/e2e
     working_dir: /e2e
     environment:
-      - CYPRESS_PROJECT_ID=chameleon-tests
       - CYPRESS_BASE_URL=${MW_SERVER:-http://mediawiki}
       - CYPRESS_API_URL=http://host.docker.internal:1234
       - CYPRESS_RECORD_KEY=chameleon-tests

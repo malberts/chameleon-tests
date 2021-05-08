@@ -11,6 +11,7 @@
     "up:base": "BUILD_ID=$(date +%s) TYPE=base docker-compose -f docker-compose.cypress.yml up",
     "up:test": "BUILD_ID=$(date +%s) TYPE=actual docker-compose -f docker-compose.cypress.yml up",
     "up:test2": "npm run up:test -- --scale cypress=2",
+    "cy2": "CYPRESS_API_URL=http://localhost:1234 $(npm bin)/cy2 run --parallel --record --key chameleon-tests",
     "prereport:copy": "mkdir -p mochawesome-report/screenshots",
     "report:copy": "cp -r cypress/snapshots/*/* mochawesome-report/screenshots/",
     "report:generate": "npx mochawesome-merge 'cypress/results/results*.json' -o mochawesome.json && npx marge mochawesome.json --no-showPassed",
