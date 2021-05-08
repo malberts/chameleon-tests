@@ -28,6 +28,11 @@ RUN { \
     } >> LocalSettings.php;
 
 ##
+# Extra users
+##
+RUN php maintenance/createAndPromote.php AnotherUser AnotherPassword
+
+##
 # Testing pages
 ##
 COPY ./mediawiki/load-pages.sh load-pages.sh

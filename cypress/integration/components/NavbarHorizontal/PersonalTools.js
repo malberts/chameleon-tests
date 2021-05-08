@@ -92,4 +92,45 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
       })
     })
   })
+
+  it.only('Newtalk Notifier', () => {
+    cy.visit('/wiki/Main_Page?uselayout=navhead')
+    cy.get('.smw-entity-examiner').should('not.exist')
+
+    // No logged out notification
+    cy.get('.navbar-usernotloggedin > .badge').should('not.exist')
+
+    // Create a message
+    cy.login('AnotherUser', 'AnotherPassword')
+    cy.visit('/wiki/User_talk:AdminUser')
+    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.get('.ca-addsection').click()
+    cy.get('#wpSummary').type('Test PersonalTools')
+    cy.get('#wpTextbox1').type('Chameleon')
+    cy.get('#wpSave').click()
+
+    // Logout
+    cy.get('.pt-logout').click()
+
+    // Still no logged out notification
+    cy.visit('/wiki/Main_Page?uselayout=navhead')
+    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.get('.navbar-usernotloggedin > .badge').should('not.exist')
+
+    cy.login()
+
+    // Notification appears
+    cy.visit('/wiki/Main_Page?uselayout=navhead')
+    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.get('.navbar-userloggedin > .badge.pt-mytalk').should('be.visible')
+
+    // View message
+    cy.get('.navbar-userloggedin').click()
+    cy.get('#pt-mytalk').should('be.visible').click()
+
+    // Notification no longer visible
+    cy.visit('/wiki/Main_Page?uselayout=navhead')
+    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.get('.navbar-userloggedin > .badge').should('not.exist')
+  })
 })

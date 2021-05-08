@@ -15,8 +15,8 @@ Cypress.Commands.add(
   'login',
   (username = 'AdminUser', password = 'AdminPassword') => {
     cy.visit('/wiki/Special:UserLogin')
-    cy.get('[name="wpName"]').type(username)
-    cy.get('[name="wpPassword"]').type(password)
+    cy.get('[name="wpName"]').clear().type(username)
+    cy.get('[name="wpPassword"]').clear().type(password)
     cy.get('#wpLoginAttempt').click()
   }
 )
