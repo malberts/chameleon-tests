@@ -93,7 +93,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
     })
   })
 
-  it.only('Newtalk Notifier', () => {
+  it('Newtalk Notifier', () => {
     cy.visit('/wiki/Main_Page?uselayout=navhead')
     cy.get('.smw-entity-examiner').should('not.exist')
 
