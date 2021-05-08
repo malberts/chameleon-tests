@@ -113,8 +113,9 @@ npm run up:director
 Repeat the following in a separate terminal for each parallel execution
 
 ```
-npm run cy2
+npm run cy2 -- --ci-build-id some-id
 ```
+Replace `some-id` with a unique value when starting a new full execution, but use the same value for each separate parallel execution per full execution.
 
 ### Run with Docker browser
 
@@ -151,20 +152,6 @@ or Terminal 3: Run tests with X number of threads
 npm run up:test -- --scale cypress=123
 ```
 
-### Update UI snapshots
-
-Terminal 1: Run MediaWiki
-
-```
-npm run up:mw
-```
-
-Terminal 2: Run Docker tests to update snapshots
-
-```
-npm run up:base
-```
-
 ### Report
 
 Generate report
@@ -179,6 +166,20 @@ To prevent contamination by separate test runs, run the following before running
 
 ```
 npm run clean
+```
+
+### Update UI snapshots
+
+Terminal 1: Run MediaWiki
+
+```
+npm run up:mw
+```
+
+Terminal 2: Run Docker tests to update snapshots
+
+```
+npm run up:base
 ```
 
 ### Snapshots
