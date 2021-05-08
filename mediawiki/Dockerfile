@@ -80,6 +80,7 @@ RUN { \
     echo '    "clean"      => __DIR__ . "/skins/chameleon/layouts/clean.xml",'; \
     echo '    "dirty"      => __DIR__ . "/layouts/dirty.xml",'; \
     echo '];'; \
+    echo '$wgVisualEditorShowBetaWelcome = false;'; \
     } >> LocalSettings.php;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/local/bin --filename=composer
