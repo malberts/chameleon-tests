@@ -43,7 +43,7 @@ describe(`Modification: Sticky`, () => {
     })
   })
 
-  describe('Sticky: Fragment', () => {
+  describe('Sticky: URI Fragment', () => {
     // Issue: https://github.com/ProfessionalWiki/chameleon/issues/139
     breakpoints.forEach((breakpoint) => {
       before(() => {
