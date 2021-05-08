@@ -1,1 +1,3 @@
-describe('Component: NavbarHorizontal: Menu', () => {})
+describe('Component: NavbarHorizontal: Menu', () => {
+  it('Count')
+})

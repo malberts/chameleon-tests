@@ -1,1 +1,3 @@
-describe('Component: NavbarHorizontal: LangLinks', () => {})
+describe('Component: NavbarHorizontal: LangLinks', () => {
+  it('Count')
+})

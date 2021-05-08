@@ -1,1 +1,4 @@
-describe('Component: NavbarHorizontal: SearchBar', () => {})
+describe('Component: NavbarHorizontal: SearchBar', () => {
+  it('Suggestions')
+  it('Submit')
+})
