@@ -3,10 +3,10 @@ FROM prowiki/mediawiki:35
 # Xdebug
 RUN pecl install xdebug
 RUN { \
-        echo "[xdebug]"; \
-        echo "zend_extension=$(find /usr/local/lib/php/ -name xdebug.so)"; \
-        echo "xdebug.mode=debug"; \
-        echo "xdebug.discover_client_host = 1"; \
+    echo "[xdebug]"; \
+    echo "zend_extension=$(find /usr/local/lib/php/ -name xdebug.so)"; \
+    echo "xdebug.mode=debug"; \
+    echo "xdebug.discover_client_host = 1"; \
     } > /usr/local/etc/php/conf.d/xdebug.ini;
 
 ##
@@ -25,7 +25,7 @@ RUN { \
     echo '$wgShowDBErrorBacktrace = true;'; \
     # echo '$wgDevelopmentWarnings = true;'; \
     echo '$wgGroupPermissions["*"]["edit"] = false;'; \
-} >> LocalSettings.php;
+    } >> LocalSettings.php;
 
 ##
 # Testing pages
@@ -42,8 +42,8 @@ RUN ./load-pages.sh \
 COPY ./mediawiki/images /tmp/images
 RUN php maintenance/importImages.php /tmp/images \
     && chown -R www-data:www-data images \
-#     && chmod -R 777 images \
-     && rm -r /tmp/images
+    #     && chmod -R 777 images \
+    && rm -r /tmp/images
 
 
 ##
@@ -64,7 +64,7 @@ RUN { \
     echo '$wgVirtualRestConfig["modules"]["parsoid"] = ['; \
     echo '    "url" => "http://localhost/w/rest.php",'; \
     echo '];'; \
-    echo 'wfLoadExtension( "Parsoid", "vendor/wikimedia/parsoid/extension.json" );'; \
+    echo 'wfLoadExtension( "Parsoid", dirname(__FILE__) . "/vendor/wikimedia/parsoid/extension.json" );'; \
     echo 'wfLoadSkin( "chameleon" );'; \
     echo '$wgDefaultSkin = "chameleon";'; \
     echo '$egChameleonAvailableLayoutFiles = ['; \
@@ -75,7 +75,7 @@ RUN { \
     echo '    "clean"      => __DIR__ . "/skins/chameleon/layouts/clean.xml",'; \
     echo '    "dirty"      => __DIR__ . "/layouts/dirty.xml",'; \
     echo '];'; \
-} >> LocalSettings.php;
+    } >> LocalSettings.php;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/local/bin --filename=composer
 COPY ./mediawiki/composer.local.json /var/www/html/composer.local.json
