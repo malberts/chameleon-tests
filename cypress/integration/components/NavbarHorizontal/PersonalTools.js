@@ -16,17 +16,20 @@ describe('Component: NavbarHorizontal: PageTools', () => {
             cy.wait(1000) // TODO: something is slow here
             cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
+          cy.get('a.navbar-usernotloggedin').click()
+          cy.get('.p-personal-tools').should('be.visible')
         })
 
-        it('Logged out menu items', () => {
-          cy.get('#mw-navigation').within((navbar) => {
-            cy.get('a.navbar-usernotloggedin').click()
-            cy.get('.p-personal-tools')
-              .should('be.visible')
-              .find('a')
-              .should('contain', 'Create account')
-              .should('contain', 'Log in')
-          })
+        it('Count', () => {
+          cy.get('.p-personal-tools').children().should('have.length', 2)
+        })
+
+        it('Create account', () => {
+          cy.get('#pt-createaccount').should('be.visible')
+        })
+
+        it('Log in', () => {
+          cy.get('#pt-login').should('be.visible')
         })
       })
     })
@@ -55,21 +58,36 @@ describe('Component: NavbarHorizontal: PageTools', () => {
             cy.wait(1000) // TODO: something is slow here
             cy.get('#mw-navigation').find('[data-toggle="collapse"]').click()
           }
+          cy.get('#mw-navigation a.navbar-userloggedin').click()
+          cy.get('.p-personal-tools').should('be.visible')
         })
 
-        it('Logged in menu items', () => {
-          cy.wait(1000) // TODO: something is slow here
-          cy.get('#mw-navigation a.navbar-userloggedin')
-            .click()
+        it('Count', () => {
+          cy.get('.p-personal-tools').children().should('have.length', 6)
+        })
 
-          cy.get('#mw-navigation .p-personal-tools')
-            .should('be.visible')
-            .should('contain', 'AdminUser')
-            .should('contain', 'Talk')
-            .should('contain', 'Preferences')
-            .should('contain', 'Watchlist')
-            .should('contain', 'Contributions')
-            .should('contain', 'Log out')
+        it('AdminUser', () => {
+          cy.get('#pt-userpage').should('be.visible')
+        })
+
+        it('Talk', () => {
+          cy.get('#pt-mytalk').should('be.visible')
+        })
+
+        it('Preferences', () => {
+          cy.get('#pt-preferences').should('be.visible')
+        })
+
+        it('Watchlist', () => {
+          cy.get('#pt-watchlist').should('be.visible')
+        })
+
+        it('Contributions', () => {
+          cy.get('#pt-mycontris').should('be.visible')
+        })
+
+        it('Log out', () => {
+          cy.get('#pt-logout').should('be.visible')
         })
       })
     })
