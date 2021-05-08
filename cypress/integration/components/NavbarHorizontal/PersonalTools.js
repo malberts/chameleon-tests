@@ -1,6 +1,6 @@
 const breakpoints = Cypress.env('breakpoints')
 
-describe('Component: NavbarHorizontal: PageTools', () => {
+describe('Component: NavbarHorizontal: PersonalTools', () => {
   describe('Logged out', () => {
     breakpoints.forEach((breakpoint) => {
       let config = {
