@@ -102,12 +102,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
 
     // Create a message
     cy.login('AnotherUser', 'AnotherPassword')
-    cy.visit('/wiki/User_talk:AdminUser')
-    cy.get('.smw-entity-examiner').should('not.exist')
-    cy.get('.ca-addsection').click()
-    cy.get('#wpSummary').type('Test PersonalTools')
-    cy.get('#wpTextbox1').type('Chameleon')
-    cy.get('#wpSave').click()
+    cy.addTalk('AdminUser', 'Test PersonalTools', 'Chameleon')
 
     // Logout
     cy.get('.pt-logout').click()
