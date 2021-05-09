@@ -9,6 +9,9 @@ declare namespace Cypress {
 
     /**
      * Log in. Defaults to the admin user if not specified.
+     * @example
+     * cy.login() // Default AdminUser
+     * cy.login('AnotherUser', 'AnotherPassword')
      *
      * @param username
      * @param password
@@ -17,6 +20,8 @@ declare namespace Cypress {
 
     /**
      * Add a message to a user's talk page.
+     * @example
+     * cy.addTalk('SomeUser', 'Hi', 'Bye')
      *
      * @param user
      * @param subject
