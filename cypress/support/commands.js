@@ -20,3 +20,12 @@ Cypress.Commands.add(
     cy.get('#wpLoginAttempt').click()
   }
 )
+
+Cypress.Commands.add('addTalk', (user, subject, message) => {
+  cy.visit(`/wiki/User_talk:${user}`)
+  cy.get('.smw-entity-examiner').should('not.exist')
+  cy.get('.ca-addsection').click()
+  cy.get('#wpSummary').type(subject)
+  cy.get('#wpTextbox1').type(message)
+  cy.get('#wpSave').click()
+})

@@ -14,5 +14,14 @@ declare namespace Cypress {
      * @param password
      */
     login(username?: string, password?: string): Chainable<any>
+
+    /**
+     * Add a message to a user's talk page.
+     *
+     * @param user
+     * @param subject
+     * @param message
+     */
+    addTalk(user: string, subject: string, message: string): Chainable<any>
   }
 }
