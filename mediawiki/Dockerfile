@@ -23,7 +23,7 @@ RUN { \
     echo '$wgEnableUploads = true;'; \
     echo '$wgShowExceptionDetails = true;'; \
     echo '$wgShowDBErrorBacktrace = true;'; \
-    # echo '$wgDevelopmentWarnings = true;'; \
+    echo '$wgDevelopmentWarnings = true;'; \
     echo '$wgGroupPermissions["*"]["edit"] = false;'; \
     } >> LocalSettings.php;
 
@@ -85,6 +85,6 @@ RUN { \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/local/bin --filename=composer
 COPY ./mediawiki/composer.local.json /var/www/html/composer.local.json
-RUN composer update --no-dev
+RUN composer update
 
 RUN php maintenance/update.php --quick
