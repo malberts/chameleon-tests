@@ -5,7 +5,7 @@ let layout = 'clean'
 describe(`Layout: ${layout}`, () => {
   before(() => {
     cy.visit(`/wiki/Main_Page?uselayout=${layout}`)
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
   })
 
   breakpoints.forEach((breakpoint) => {

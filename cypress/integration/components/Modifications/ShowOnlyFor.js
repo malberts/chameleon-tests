@@ -4,7 +4,7 @@ describe(`Modification: ShowOnlyFor`, () => {
   describe('Without permission', () => {
     before(() => {
       cy.visit(`/wiki/Main_Page?uselayout=clean`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {
@@ -28,7 +28,7 @@ describe(`Modification: ShowOnlyFor`, () => {
     before(() => {
       cy.login()
       cy.visit(`/wiki/Main_Page?uselayout=clean`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {

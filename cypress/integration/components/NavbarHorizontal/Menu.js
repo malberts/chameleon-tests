@@ -1,7 +1,7 @@
 describe('Component: NavbarHorizontal: Menu', () => {
   before(() => {
     cy.visit('/wiki/Main_Page?uselayout=navhead')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
   })
 
   it('Count', () => {

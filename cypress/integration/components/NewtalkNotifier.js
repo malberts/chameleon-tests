@@ -1,7 +1,7 @@
 describe('Component: NewtalkNotifier', () => {
   it('Newtalk Notifier', () => {
     cy.visit('/wiki/Main_Page?uselayout=standard')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
 
     // No logged out notification
     cy.get('.usermessage').should('not.exist')
@@ -15,14 +15,14 @@ describe('Component: NewtalkNotifier', () => {
 
     // Still no logged out notification
     cy.visit('/wiki/Main_Page?uselayout=standard')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.usermessage').should('not.exist')
 
     cy.login()
 
     // Notification appears
     cy.visit('/wiki/Main_Page?uselayout=standard')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.usermessage').should('be.visible')
 
     // View message
@@ -30,7 +30,7 @@ describe('Component: NewtalkNotifier', () => {
 
     // Notification no longer visible
     cy.visit('/wiki/Main_Page?uselayout=standard')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.usermessage').should('not.exist')
   })
 })

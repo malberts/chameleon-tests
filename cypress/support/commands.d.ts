@@ -1,6 +1,13 @@
 declare namespace Cypress {
   interface Chainable<Subject> {
     /**
+     * Wait for page indicators to be ready.
+     * @example
+     * cy.waitForIndicators()
+     */
+    waitForIndicators(): Chainable<any>
+
+    /**
      * Replace dynamic timestamps on the page with fixed values.
      * @example
      * cy.replaceTimestamps()

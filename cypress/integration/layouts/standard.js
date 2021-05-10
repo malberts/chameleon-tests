@@ -5,7 +5,7 @@ let layout = 'standard'
 describe(`Layout: ${layout}`, () => {
   before(() => {
     cy.visit(`/wiki/Main_Page?uselayout=${layout}`)
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.replaceTimestamps()
   })
 

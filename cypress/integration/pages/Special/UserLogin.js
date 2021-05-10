@@ -4,7 +4,7 @@ describe('Special:UserLogin', () => {
   describe('Snapshots', () => {
     before(() => {
       cy.visit('/wiki/Special:UserLogin')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {
@@ -22,7 +22,7 @@ describe('Special:UserLogin', () => {
 
   it('Can login', () => {
     cy.login()
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.pt-userpage').contains('AdminUser').should('be.visible')
   })
 })

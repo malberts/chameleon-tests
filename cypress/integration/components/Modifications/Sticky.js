@@ -4,7 +4,7 @@ describe(`Modification: Sticky`, () => {
   describe('Sticky', () => {
     before(() => {
       cy.visit(`/wiki/Special:Version?uselayout=stickyhead`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {
@@ -53,10 +53,12 @@ describe(`Modification: Sticky`, () => {
       describe(breakpoint.name, config, () => {
         it('Initial Sticky', () => {
           cy.visit('/wiki/Special:Version?uselayout=stickyhead#mw-version-ext')
-          cy.get('.smw-entity-examiner').should('not.exist')
+          cy.waitForIndicators()
 
           // Secondary Navigation
-          cy.get('[id^="mw-navigation"]:nth-of-type(1)').should('not.be.inViewport')
+          cy.get('[id^="mw-navigation"]:nth-of-type(1)').should(
+            'not.be.inViewport'
+          )
           // Primary Navigation
           cy.get('[id^="mw-navigation"]:nth-of-type(2)').should('be.inViewport')
           cy.screenshot(`Initial_Sticky_Fragment_${breakpoint.name}`, {
@@ -70,7 +72,7 @@ describe(`Modification: Sticky`, () => {
   describe('Not Sticky', () => {
     before(() => {
       cy.visit(`/wiki/Special:Version?uselayout=navhead`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {

@@ -2,7 +2,7 @@ describe('Component: NavbarHorizontal: PageTools', () => {
   context('Page: Logged out', () => {
     before(() => {
       cy.visit('/wiki/Main_Page?uselayout=navhead')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
       // Open Toolbox dropdown.
       cy.get('.navbar-more-tools').click()
       cy.get('#p-contentnavigation').should('be.visible')
@@ -29,7 +29,7 @@ describe('Component: NavbarHorizontal: PageTools', () => {
     before(() => {
       cy.login()
       cy.visit('/wiki/Main_Page?uselayout=navhead')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
       // Open Toolbox dropdown.
       cy.get('.navbar-more-tools').click()
       cy.get('#p-contentnavigation').should('be.visible')
@@ -75,7 +75,7 @@ describe('Component: NavbarHorizontal: PageTools', () => {
   context('Special Page: Logged out', () => {
     before(() => {
       cy.visit('/wiki/Special:SpecialPages?uselayout=navhead')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     it('Not visible', () => {
@@ -87,7 +87,7 @@ describe('Component: NavbarHorizontal: PageTools', () => {
     before(() => {
       cy.login()
       cy.visit('/wiki/Special:SpecialPages?uselayout=navhead')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     it('Not visible', () => {

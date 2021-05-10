@@ -4,7 +4,7 @@ describe('Component: NavbarHorizontal: Toolbox', () => {
   context('Page', () => {
     before(() => {
       cy.visit('/wiki/Main_Page?uselayout=standard')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
       // Open Toolbox dropdown.
       cy.get('.p-tb-dropdown')
         .click()
@@ -55,7 +55,7 @@ describe('Component: NavbarHorizontal: Toolbox', () => {
   context('Special Page', () => {
     before(() => {
       cy.visit('/wiki/Special:UserLogin?uselayout=standard')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
       // Open Toolbox dropdown.
       cy.get('.p-tb-dropdown')
         .click()

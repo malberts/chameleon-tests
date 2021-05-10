@@ -10,7 +10,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
       describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
-          cy.get('.smw-entity-examiner').should('not.exist')
+          cy.waitForIndicators()
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
             cy.wait(1000) // TODO: something is slow here
@@ -52,7 +52,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
       describe(breakpoint.name, config, () => {
         before(() => {
           cy.visit('/wiki/Main_Page?uselayout=navhead')
-          cy.get('.smw-entity-examiner').should('not.exist')
+          cy.waitForIndicators()
           // Expand menu if collapsed.
           if (breakpoint.collapsedChameleon) {
             cy.wait(1000) // TODO: something is slow here
@@ -95,7 +95,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
 
   it('Newtalk Notifier', () => {
     cy.visit('/wiki/Main_Page?uselayout=navhead')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
 
     // No logged out notification
     cy.get('.navbar-usernotloggedin > .badge').should('not.exist')
@@ -109,14 +109,14 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
 
     // Still no logged out notification
     cy.visit('/wiki/Main_Page?uselayout=navhead')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.navbar-usernotloggedin > .badge').should('not.exist')
 
     cy.login()
 
     // Notification appears
     cy.visit('/wiki/Main_Page?uselayout=navhead')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.navbar-userloggedin > .badge.pt-mytalk').should('be.visible')
 
     // View message
@@ -125,7 +125,7 @@ describe('Component: NavbarHorizontal: PersonalTools', () => {
 
     // Notification no longer visible
     cy.visit('/wiki/Main_Page?uselayout=navhead')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
     cy.get('.navbar-userloggedin > .badge').should('not.exist')
   })
 })

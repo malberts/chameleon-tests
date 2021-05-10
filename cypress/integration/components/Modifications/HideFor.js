@@ -4,7 +4,7 @@ describe(`Modification: HideFor`, () => {
   describe('Without permission', () => {
     before(() => {
       cy.visit(`/wiki/Main_Page?uselayout=dirty`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {
@@ -28,7 +28,7 @@ describe(`Modification: HideFor`, () => {
     before(() => {
       cy.login()
       cy.visit(`/wiki/Main_Page?uselayout=dirty`)
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     breakpoints.forEach((breakpoint) => {

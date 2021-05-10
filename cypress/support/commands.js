@@ -2,6 +2,13 @@ const compareSnapshotCommand = require('cypress-visual-regression/dist/command')
 
 compareSnapshotCommand()
 
+Cypress.Commands.add('waitForIndicators', () => {
+  cy.get('#mw-indicators')
+    .should('exist')
+    .find('.smw-entity-examiner')
+    .should('not.exist')
+})
+
 Cypress.Commands.add('replaceTimestamps', () => {
   cy.contains('This page was last edited on ').then(($footer) => {
     cy.wrap($footer).invoke(
@@ -23,7 +30,7 @@ Cypress.Commands.add(
 
 Cypress.Commands.add('addTalk', (user, subject, message) => {
   cy.visit(`/wiki/User_talk:${user}`)
-  cy.get('.smw-entity-examiner').should('not.exist')
+  cy.waitForIndicators()
   cy.get('.ca-addsection').click()
   cy.get('#wpSummary').type(subject)
   cy.get('#wpTextbox1').type(message)

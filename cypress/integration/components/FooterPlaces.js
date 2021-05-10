@@ -1,7 +1,7 @@
 describe('Component: FooterPlaces', () => {
   before(() => {
     cy.visit('/wiki/Main_Page')
-    cy.get('.smw-entity-examiner').should('not.exist')
+    cy.waitForIndicators()
   })
 
   it('Count', () => {

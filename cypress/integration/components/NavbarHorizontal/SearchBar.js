@@ -2,7 +2,7 @@ describe('Component: NavbarHorizontal: SearchBar', () => {
   context('Suggestions', () => {
     before(() => {
       cy.visit('/wiki/Main_Page?uselayout=standard')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
       cy.get('#searchInput').type('Special:Se')
     })
 
@@ -39,7 +39,7 @@ describe('Component: NavbarHorizontal: SearchBar', () => {
   context('Search', () => {
     beforeEach(() => {
       cy.visit('/wiki/Main_Page?uselayout=standard')
-      cy.get('.smw-entity-examiner').should('not.exist')
+      cy.waitForIndicators()
     })
 
     it('Submit', () => {
