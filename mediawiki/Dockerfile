@@ -59,10 +59,14 @@ COPY ./mediawiki/layouts ./layouts
 ##
 # Dependencies
 ##
+# Git only
+RUN git clone --branch REL1_35 --single-branch https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git extensions/Echo
+
 RUN { \
     echo 'wfLoadExtension( "Bootstrap" );'; \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
     echo 'wfLoadExtension( "CiteThisPage" );'; \
+    echo 'wfLoadExtension( "Echo" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
     echo 'enableSemantics( "https://www.semantic-mediawiki.org/" );'; \
@@ -73,12 +77,15 @@ RUN { \
     echo 'wfLoadSkin( "chameleon" );'; \
     echo '$wgDefaultSkin = "chameleon";'; \
     echo '$egChameleonAvailableLayoutFiles = ['; \
-    echo '    "standard"   => __DIR__ . "/skins/chameleon/layouts/standard.xml",'; \
-    echo '    "navhead"    => __DIR__ . "/skins/chameleon/layouts/navhead.xml",'; \
-    echo '    "fixedhead"  => __DIR__ . "/skins/chameleon/layouts/fixedhead.xml",'; \
-    echo '    "stickyhead" => __DIR__ . "/skins/chameleon/layouts/stickyhead.xml",'; \
-    echo '    "clean"      => __DIR__ . "/skins/chameleon/layouts/clean.xml",'; \
-    echo '    "dirty"      => __DIR__ . "/layouts/dirty.xml",'; \
+    echo '    "standard"            => __DIR__ . "/skins/chameleon/layouts/standard.xml",'; \
+    echo '    "navhead"             => __DIR__ . "/skins/chameleon/layouts/navhead.xml",'; \
+    echo '    "fixedhead"           => __DIR__ . "/skins/chameleon/layouts/fixedhead.xml",'; \
+    echo '    "stickyhead"          => __DIR__ . "/skins/chameleon/layouts/stickyhead.xml",'; \
+    echo '    "clean"               => __DIR__ . "/skins/chameleon/layouts/clean.xml",'; \
+    echo '    "dirty"               => __DIR__ . "/layouts/dirty.xml",'; \
+    echo '    "standard_echo_icons" => __DIR__ . "/layouts/standard_echo_icons.xml",'; \
+    echo '    "standard_echo_links" => __DIR__ . "/layouts/standard_echo_links.xml",'; \
+    echo '    "stickyhead_echo"     => __DIR__ . "/layouts/stickyhead_echo.xml",'; \
     echo '];'; \
     echo '$wgVisualEditorShowBetaWelcome = false;'; \
     } >> LocalSettings.php;

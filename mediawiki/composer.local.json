@@ -9,5 +9,12 @@
     "mediawiki/bootstrap-examples": "dev-master",
     "mediawiki/chameleon-skin": "dev-master",
     "mediawiki/semantic-media-wiki": "~3.2"
+  },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "extensions/Echo/composer.json"
+      ]
+    }
   }
 }
