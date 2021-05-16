@@ -219,9 +219,11 @@ COPY ./mediawiki/layouts ./layouts
 ##
 # Git only
 RUN git clone --branch REL1_35 --single-branch https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git extensions/Echo
+RUN git clone --branch v3.2.0 --single-branch https://bitbucket.org/wikiskripta/medik.git skins/Medik
 
 RUN { \
     echo 'wfLoadExtension( "Bootstrap" );'; \
+    echo 'wfLoadExtension( "BootstrapComponents" );'; \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
     echo 'wfLoadExtension( "CiteThisPage" );'; \
     echo 'wfLoadExtension( "Echo" );'; \
@@ -233,6 +235,7 @@ RUN { \
     echo '];'; \
     echo 'wfLoadExtension( "Parsoid", dirname(__FILE__) . "/vendor/wikimedia/parsoid/extension.json" );'; \
     echo 'wfLoadSkin( "chameleon" );'; \
+    echo 'wfLoadSkin( "Medik" );'; \
     echo '$wgDefaultSkin = "chameleon";'; \
     echo '$egChameleonAvailableLayoutFiles = ['; \
     echo '    "standard"            => __DIR__ . "/skins/chameleon/layouts/standard.xml",'; \
@@ -244,6 +247,7 @@ RUN { \
     echo '    "standard_echo_icons" => __DIR__ . "/layouts/standard_echo_icons.xml",'; \
     echo '    "standard_echo_links" => __DIR__ . "/layouts/standard_echo_links.xml",'; \
     echo '    "stickyhead_echo"     => __DIR__ . "/layouts/stickyhead_echo.xml",'; \
+    echo '    "fixedhead_no_echo"   => __DIR__ . "/layouts/fixedhead_no_echo.xml",'; \
     echo '];'; \
     echo '$wgVisualEditorShowBetaWelcome = false;'; \
     } >> LocalSettings.php;
