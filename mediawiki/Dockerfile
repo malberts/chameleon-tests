@@ -252,6 +252,7 @@ RUN { \
     echo '    "standard_echo_links" => __DIR__ . "/layouts/standard_echo_links.xml",'; \
     echo '    "stickyhead_echo"     => __DIR__ . "/layouts/stickyhead_echo.xml",'; \
     echo '    "fixedhead_no_echo"   => __DIR__ . "/layouts/fixedhead_no_echo.xml",'; \
+    echo '    "sidebar"             => __DIR__ . "/layouts/sidebar.xml",'; \
     echo '];'; \
     echo '$egChameleonEnableExternalLinkIcons = true;'; \
     echo '$wgVisualEditorShowBetaWelcome = false;'; \
