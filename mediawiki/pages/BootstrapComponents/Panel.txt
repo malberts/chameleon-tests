@@ -1,0 +1,50 @@
+== Description ==
+A panel in bootstrap is a bordered box with some padding around its content.
+
+For available options to this component, please see the [https://github.com/oetterer/BootstrapComponents/blob/master/docs/components.md#panel documentation on github].
+
+== Examples ==
+=== Always visible ===
+<bootstrap_panel heading="This is the panel headline" footer="And some footer text" color="danger">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+=== Collapsible ===
+<bootstrap_panel collapsible heading="This is the panel headline" footer="And some footer text" color="success">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+=== Color variants ===
+Panels support the following coler codes:
+* default
+* primary
+* success
+* info
+* warning
+* danger
+
+<bootstrap_panel collapsible heading="This is a panel with color ''default''" color="default" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+<bootstrap_panel collapsible heading="This is a panel with color ''primary''" color="primary" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+<bootstrap_panel collapsible heading="This is a panel with color ''success''" color="success" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+<bootstrap_panel collapsible heading="This is a panel with color ''info''" color="info" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+<bootstrap_panel collapsible heading="This is a panel with color ''warning''" color="warning" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+<bootstrap_panel collapsible heading="This is a panel with color ''danger''" color="danger" collapsible footer="And some footer text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim tempus augue ac dignissim. Suspendisse potenti. Vivamus tincidunt turpis ex, sed varius nisl vehicula vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut pulvinar ante. Duis pellentesque porttitor posuere. Praesent diam nisi, aliquet gravida tellus ac, dictum ultricies odio. Nullam quam dolor, venenatis iaculis elementum in, molestie in nulla. Mauris ut vehicula mi. Curabitur mollis sit amet nisl id tristique. Fusce semper feugiat urna, vitae efficitur ex aliquet ac. Duis nec posuere eros. Donec ex velit, pellentesque non lobortis blandit, congue at mi.
+</bootstrap_panel>
+
+[[Category:Bootstrap Components examples]]

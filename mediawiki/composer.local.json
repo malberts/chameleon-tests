@@ -1,24 +1,15 @@
 {
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/malberts/BootstrapExamples"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/malberts/BootstrapComponents"
-    }
-  ],
   "require": {
-    "mediawiki/bootstrap-components": "dev-master",
-    "mediawiki/bootstrap-examples": "dev-master",
     "mediawiki/chameleon-skin": "dev-master",
     "mediawiki/semantic-media-wiki": "~3.2"
   },
   "extra": {
     "merge-plugin": {
       "include": [
-        "extensions/Echo/composer.json"
+        "extensions/BootstrapComponents/composer.json",
+        "extensions/BootstrapExamples/composer.json",
+        "extensions/Echo/composer.json",
+        "skins/Medik/composer.json"
       ]
     }
   }

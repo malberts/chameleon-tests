@@ -1,0 +1,16 @@
+== Description ==
+An accordion can group a number of [[{{BASEPAGENAME}}/Panel|panels]] together in a way, that all except one are collapsed.
+
+For available options to this component, please see the [https://github.com/oetterer/BootstrapComponents/blob/master/docs/components.md#accordion documentation on github].
+
+Please also visit the [https://github.com/oetterer/BootstrapComponents/blob/master/docs/components.md#panel github documentation] when looking for help for the panel component.
+
+== Example ==
+<bootstrap_accordion>
+	<bootstrap_panel heading="Headline for Panel1">Text inside the panel</bootstrap_panel>
+	<bootstrap_panel heading="Headline for Panel2" color="danger">Text inside the panel</bootstrap_panel>
+	<bootstrap_panel heading="Headline for Panel3" active>Text inside the panel</bootstrap_panel>
+	<bootstrap_panel heading="Headline for Panel4" color="info">Text inside the panel</bootstrap_panel>
+</bootstrap_accordion>
+
+[[Category:Bootstrap Components examples]]
