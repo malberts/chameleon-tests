@@ -2,7 +2,8 @@
 ** Special:BootstrapExamples | Examples
 ** Special:BootstrapExamples | More Examples | fas fa-th
 * Chameleon
-* Testing | Testing | fas fa-bug
 * Components
 ** BootstrapComponents/Accordion | Accordion | fas fa-grip-lines
 ** BootstrapComponents/Panel | Panel | fas fa-columns
+* Testing | Testing | fas fa-bug
+** External Links | External Links | fas fa-external-link-alt

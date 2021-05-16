@@ -1,0 +1,75 @@
+{| class="table table-sm"
+|- class="thead-dark"
+! Type !! File extension !! Sample link
+|-
+| [[Portable Document Format]] || .pdf .PDF, .pdf# .PDF# .pdf? .PDF? || http://example.org/test.pdf
+|-
+| [[Audio Video Interleave]] || .avi .AVI || http://example.org/test.avi
+|-
+| [[MPEG-1]] || .mpg .MPG .mpeg .MPEG || http://example.org/test.mpg
+|-
+| [[Ogg]] || .ogm .OGM || http://example.org/test.ogm
+|-
+| [[MIDI]] || .MID  .midi .MID || http://example.org/test.mid
+|-
+| [[MP3]] || .MP3 || http://example.org/test.mp3
+|-
+| [[Ogg Vorbis]] || .OGG || http://example.org/test.ogg
+|-
+| [[WAV|Waveform Audio File Format ]] || .WAV* || http://example.org/test.wav
+|-
+| [[Windows Media Audio]] || .wma .WMA || http://example.org/test.wma
+|- class="thead-dark"
+! Type !! URI scheme !! Sample link
+|-
+| [[Internet Relay Chat]] || irc:// ircs:// || irc://example.org
+|-
+| [[File Transfer Protocol]] || ftp:// || ftp://example.org
+|-
+| [[Network News Transfer Protocol]] || news: || news:example.org
+|-
+| [[mailto]] || mailto: || mailto:example@example.org
+|-
+| [[HTTP Secure]] || https:// || https://example.org/test.html
+|-
+| [[Apache Subversion]] || svn:// || svn://example.org/
+|-
+| [[Bitcoin]] || <nowiki>bitcoin://</nowiki> || bitcoin://example.org/
+|-
+| [[FTPS]] || ftps:// || ftps://example.org/
+|-
+| [[Geo URI]] || geo: || geo:37.786971,-122.399677
+|-
+| [[Git (software)|Git]] || <nowiki>git://</nowiki> || git://example.org/
+|-
+| [[Gopher (protocol)|Gopher]] || gopher:// || gopher://example.org
+|-
+| [[Hypertext Transfer Protocol]] || http:// || http://example.org
+|-
+| [[Magnet URI scheme]] || <nowiki>magnet://</nowiki> || magnet://example.org/
+|-
+| [[Multimedia Messaging Service]] || mms:// || mms://example.org/
+|-
+| [[NASA World Wind]] || worldwind:// || worldwind://example.org/
+|-
+| [[Network News Transfer Protocol]] || nntp:// || nntp://example.org/
+|-
+| [[Secure Shell]] || ssh:// || ssh://example.org/
+|-
+| Secure [[Session Initiation Protocol]] || <nowiki>sips://</nowiki> || sips://example.org/
+|-
+| [[Session Initiation Protocol]] || <nowiki>sip://</nowiki> || sip://example.org/
+|-
+| [[Short Message Service]] || <nowiki>sms://</nowiki> || sms://example.org/
+|-
+| [[SSH File Transfer Protocol]] || sftp:// || sftp://example.org/
+|-
+| Telephone || <nowiki>tel://</nowiki> || tel://example.org/
+|-
+| [[Telnet]] || telnet:// || telnet://example.org/
+|-
+| [[Uniform resource name]] || urn: || urn:isbn:0451450523
+|-
+| [[XMPP]] || <nowiki>xmpp://</nowiki> || xmpp://example.org/
+|-
+|}
