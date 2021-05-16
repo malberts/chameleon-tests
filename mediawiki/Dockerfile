@@ -253,6 +253,7 @@ RUN { \
     echo '    "stickyhead_echo"     => __DIR__ . "/layouts/stickyhead_echo.xml",'; \
     echo '    "fixedhead_no_echo"   => __DIR__ . "/layouts/fixedhead_no_echo.xml",'; \
     echo '];'; \
+    echo '$egChameleonEnableExternalLinkIcons = true;'; \
     echo '$wgVisualEditorShowBetaWelcome = false;'; \
     } >> LocalSettings.php;
 
