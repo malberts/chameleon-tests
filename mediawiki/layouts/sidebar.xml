@@ -5,18 +5,18 @@
 		<modification type="Sticky"/>
 		<component type="Logo" position="head"/>
 		<component type="SearchBar" class="order-first order-cmln-0" position="right" buttons="go"/>
-		<component type="EchoIcons" position="right" />
+		<!-- <component type="EchoIcons" position="right" /> -->
 		<component type="PersonalTools" position="right" hideEchoLinks="yes" />
 	</component>
 
 	<grid mode="fluid" class="flex-fill">
 		<row>
-			<cell class="col-12 col-md-3 col-xl-2" >
+			<cell class="sidebar col-12 col-md-3 col-xl-2" >
 				<component type="NavMenu" flatten="navigation"/>
 				<component type="Menu" message="secondary-menu"/>
 			</cell>
 
-			<cell class="col-12 col-md-9 col-xl-9 px-md-5">
+			<cell class="main col-12 col-md-9 col-xl-9 px-md-5">
 				<component type="NavbarHorizontal" collapsible="no" class="bg-white" >
 					<component type="PageTools" buttons="main,mediawiki,user,talk" />
 					<component type="Toolbox" flatten="no" class="dropdown"/>
