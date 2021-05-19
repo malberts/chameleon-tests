@@ -3,6 +3,7 @@ const addContext = require('mochawesome/addContext')
 
 import './commands'
 import './assertions'
+require('cypress-grep')()
 
 // Add screenshots to Mochawesome report.
 const screenshotsFolder = Cypress.config('screenshotsFolder')
