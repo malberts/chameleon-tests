@@ -231,6 +231,8 @@ RUN { \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
     echo 'wfLoadExtension( "CiteThisPage" );'; \
     echo 'wfLoadExtension( "Echo" );'; \
+    echo 'wfLoadExtension( "MultimediaViewer" );'; \
+    echo 'wfLoadExtension( "TemplateData" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
     echo 'enableSemantics( "https://www.semantic-mediawiki.org/" );'; \
