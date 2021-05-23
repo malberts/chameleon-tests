@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.0/layout.rng">
 
-	<component type="NavbarHorizontal">
+	<component type="NavbarHorizontal" class="bg-primary">
 		<modification type="Sticky"/>
 		<component type="Logo" position="head"/>
 		<component type="SearchBar" class="order-first order-cmln-0" position="right" buttons="go"/>
