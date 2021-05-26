@@ -1,4 +1,4 @@
-FROM cypress/included:7.3.0
+FROM cypress/included:7.4.0
 
 RUN npm install -g cy2
 
