@@ -19,4 +19,5 @@ data
 # Docker
 mediawiki/extensions
 mediawiki/skins
+mediawiki/themes
 docker-compose.override.yml

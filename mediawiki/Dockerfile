@@ -220,9 +220,10 @@ COPY ./mediawiki/layouts ./layouts
 ##
 # Git only
 RUN git clone --branch REL1_35 --single-branch https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git extensions/Echo
+RUN git clone --branch REL1_35 --single-branch https://gerrit.wikimedia.org/r/mediawiki/extensions/FlaggedRevs.git extensions/FlaggedRevs
 RUN git clone --branch v3.2.0 --single-branch https://bitbucket.org/wikiskripta/medik.git skins/Medik
 
-RUN git clone --branch issue-21-22 --single-branch https://github.com/malberts/BootstrapComponents.git extensions/BootstrapComponents
+# RUN git clone --branch master --single-branch https://github.com/oetterer/BootstrapComponents.git extensions/BootstrapComponents
 RUN git clone --branch master --single-branch https://github.com/malberts/BootstrapExamples.git extensions/BootstrapExamples
 
 RUN { \
@@ -231,6 +232,7 @@ RUN { \
     echo 'wfLoadExtension( "BootstrapExamples" );'; \
     echo 'wfLoadExtension( "CiteThisPage" );'; \
     echo 'wfLoadExtension( "Echo" );'; \
+    echo '// wfLoadExtension( "FlaggedRevs" );'; \
     echo 'wfLoadExtension( "MultimediaViewer" );'; \
     echo 'wfLoadExtension( "TemplateData" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
@@ -256,8 +258,16 @@ RUN { \
     echo '    "fixedhead_no_echo"   => __DIR__ . "/layouts/fixedhead_no_echo.xml",'; \
     echo '    "sidebar"             => __DIR__ . "/layouts/sidebar.xml",'; \
     echo '];'; \
+    echo '// $egChameleonLayoutFile = __DIR__ . "layouts/navhead.xml";'; \
+    echo '// $egChameleonThemeFile = __DIR__ . "/themes/united.scss";'; \
+    echo '$egChameleonExternalStyleModules = ['; \
+    echo '];'; \
+    echo '$egChameleonExternalStyleVariables = ['; \
+    echo '];'; \
     echo '$egChameleonEnableExternalLinkIcons = true;'; \
     echo '$wgVisualEditorShowBetaWelcome = false;'; \
+    echo '$wgVisualEditorEnableWikitext = true;'; \
+    echo '$wgDefaultUserOptions["visualeditor-newwikitext"] = 1;'; \
     } >> LocalSettings.php;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/local/bin --filename=composer

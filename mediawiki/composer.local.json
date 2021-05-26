@@ -1,12 +1,12 @@
 {
   "require": {
+    "mediawiki/bootstrap-components": "~4.0",
     "mediawiki/chameleon-skin": "dev-master",
     "mediawiki/semantic-media-wiki": "~3.2"
   },
   "extra": {
     "merge-plugin": {
       "include": [
-        "extensions/BootstrapComponents/composer.json",
         "extensions/BootstrapExamples/composer.json",
         "extensions/Echo/composer.json",
         "skins/Medik/composer.json"
