@@ -1,0 +1,11 @@
+* navigation
+** mainpage|mainpage-description
+** recentchanges-url|recentchanges
+** randompage-url|randompage
+** helppage|help-mediawiki
+* Bootstrap
+** Special:BootstrapExamples | Examples
+** Special:BootstrapExamples | More Examples
+* SEARCH
+* TOOLBOX
+* LANGUAGES

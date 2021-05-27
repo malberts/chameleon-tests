@@ -10,13 +10,13 @@
 	</component>
 
 	<grid mode="fluid" class="flex-fill main-grid" id="main-grid" >
-		<row class="main-row" id="main-row" >
-			<cell class="sidebar col-12 col-md-3 col-xl-2" id="sidebar" >
+		<row class="main-row flex-fill" id="main-row" >
+			<cell class="sidebar col-12 col-md-3 col-xl-2 bg-light border-right" id="sidebar" >
 				<component type="NavMenu" flatten="navigation"/>
 				<component type="Menu" message="secondary-menu"/>
 			</cell>
 
-			<cell class="main-wrapper col-12 col-md-9 col-xl-9 px-md-5" id="main-wrapper" >
+			<cell class="main-wrapper col-12 col-md-9 col-xl-9" id="main-wrapper" >
 				<component type="NavbarHorizontal" collapsible="no" class="bg-white" >
 					<component type="PageTools" buttons="main,mediawiki,user,talk" />
 					<component type="Toolbox" flatten="no" class="dropdown"/>
@@ -31,7 +31,7 @@
 		<component type="LangLinks" flatten="no" class="dropup"/>
 	</component>
 
-	<grid mode="fluid" class="footer" id="footer" >
+	<grid mode="fluid" class="footer bg-dark text-light" id="footer" >
 		<row class="footer-row" id="footer-row" >
 			<cell class="footer-left" id="footer-left" >
 				<component type="FooterInfo"/>
