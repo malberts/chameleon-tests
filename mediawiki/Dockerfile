@@ -261,7 +261,7 @@ RUN { \
     echo '// $egChameleonLayoutFile = __DIR__ . "layouts/navhead.xml";'; \
     echo '// $egChameleonThemeFile = __DIR__ . "/themes/united.scss";'; \
     echo '$egChameleonExternalStyleModules = ['; \
-    echo '    // __DIR__ . '/themes/united_bootswatch.scss' => "afterMain",'; \
+    echo '    // __DIR__ . "/themes/united_bootswatch.scss" => "afterMain",'; \
     echo '];'; \
     echo '$egChameleonExternalStyleVariables = ['; \
     echo '];'; \
