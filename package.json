@@ -20,7 +20,7 @@
   "devDependencies": {
     "cy2": "^1.2.1",
     "cypress": "^7.4.0",
-    "cypress-grep": "^2.3.2",
+    "cypress-grep": "^2.4",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-visual-regression": "^1.5.7",
     "mocha-junit-reporter": "^2.0.0",

@@ -2,15 +2,15 @@
   "require": {
     "mediawiki/bootstrap-components": "~4.0",
     "mediawiki/chameleon-skin": "dev-master",
+    "mediawiki/page-forms": "~5.2",
     "mediawiki/semantic-media-wiki": "~3.2",
     "thomaspark/bootswatch": "~4.6"
   },
   "extra": {
     "merge-plugin": {
       "include": [
-        "extensions/BootstrapExamples/composer.json",
-        "extensions/Echo/composer.json",
-        "skins/Medik/composer.json"
+        "extensions/*/composer.json",
+        "skins/*/composer.json"
       ]
     }
   }

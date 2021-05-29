@@ -234,6 +234,7 @@ RUN { \
     echo 'wfLoadExtension( "Echo" );'; \
     echo '// wfLoadExtension( "FlaggedRevs" );'; \
     echo 'wfLoadExtension( "MultimediaViewer" );'; \
+    echo 'wfLoadExtension( "PageForms" );'; \
     echo 'wfLoadExtension( "TemplateData" );'; \
     echo 'wfLoadExtension( "VisualEditor" );'; \
     echo 'wfLoadExtension( "WikiEditor" );'; \
