@@ -2,7 +2,8 @@
   "require": {
     "mediawiki/bootstrap-components": "~4.0",
     "mediawiki/chameleon-skin": "dev-master",
-    "mediawiki/semantic-media-wiki": "~3.2"
+    "mediawiki/semantic-media-wiki": "~3.2",
+    "thomaspark/bootswatch": "~4.6"
   },
   "extra": {
     "merge-plugin": {

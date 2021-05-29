@@ -258,10 +258,11 @@ RUN { \
     echo '    "fixedhead_no_echo"   => __DIR__ . "/layouts/fixedhead_no_echo.xml",'; \
     echo '    "sidebar"             => __DIR__ . "/layouts/sidebar.xml",'; \
     echo '];'; \
-    echo '// $egChameleonLayoutFile = __DIR__ . "layouts/navhead.xml";'; \
-    echo '// $egChameleonThemeFile = __DIR__ . "/themes/united.scss";'; \
+    echo '// $egChameleonLayoutFile = __DIR__ . "/layouts/sidebar.xml";'; \
+    echo '// $theme = "cosmo";'; \
+    echo '// $egChameleonThemeFile = __DIR__ . "/vendor/thomaspark/bootswatch/dist/" . $theme . "/_variables.scss";'; \
     echo '$egChameleonExternalStyleModules = ['; \
-    echo '    // __DIR__ . "/themes/united_bootswatch.scss" => "afterMain",'; \
+    echo '    // __DIR__ . "/vendor/thomaspark/bootswatch/dist/" . $theme . "/_bootswatch.scss" => "afterMain",'; \
     echo '];'; \
     echo '$egChameleonExternalStyleVariables = ['; \
     echo '];'; \

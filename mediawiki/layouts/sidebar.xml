@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.0/layout.rng">
 
-	<component type="NavbarHorizontal" class="bg-primary">
+	<component type="NavbarHorizontal" class="bg-primary navbar-dark">
 		<modification type="Sticky"/>
 		<component type="Logo" position="head"/>
+		<component type="Html"><![CDATA[
+			<a class="navbar-brand" href="/">Chameleon Tests</a>
+		]]></component>
 		<component type="SearchBar" class="order-first order-cmln-0" position="right" buttons="go"/>
-		<!-- <component type="EchoIcons" position="right" /> -->
+		<component type="EchoIcons" position="right" />
 		<component type="PersonalTools" position="right" hideEchoLinks="yes" />
 	</component>
 
 	<grid mode="fluid" class="flex-fill main-grid" id="main-grid" >
 		<row class="main-row flex-fill" id="main-row" >
 			<cell class="sidebar col-12 col-md-3 col-xl-2 bg-light border-right" id="sidebar" >
-				<component type="NavMenu" flatten="navigation"/>
+				<component type="NavMenu" flatten="navigation;Bootstrap"/>
 				<component type="Menu" message="secondary-menu"/>
 			</cell>
 
