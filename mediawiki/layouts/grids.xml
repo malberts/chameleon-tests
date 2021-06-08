@@ -130,7 +130,7 @@
 		</component>
 	</component>
 
-	<component mode="fluid" class="rounded-lg border border-success mb-4">
+	<component class="container-fluid rounded-lg border border-success mb-4">
 		<component class="row border border-primary">
 			<component class="col bg-danger">
 				<component type="Html">1.1</component>
@@ -215,7 +215,7 @@
 		</div>
 	</div>
 
-	<div class="rounded-lg border border-success mb-4">
+	<div class="container-fluid rounded-lg border border-success mb-4">
 		<div class="row border border-primary">
 			<div class="col bg-danger">
 				<component type="Html">1.1</component>
