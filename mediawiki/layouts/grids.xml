@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.0/layout.rng">
+
+	<!-- Structure components -->
+	<component type="Html"><h1>Structure components</h1></component>
+	<grid class="rounded-lg border border-success mb-4">
+		<row class="border border-primary">
+			<cell class="bg-danger">
+				<component type="Html">1.1</component>
+			</cell>
+			<cell>
+				<component type="Html">1.2</component>
+			</cell>
+		</row>
+
+		<row>
+			<cell class="bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</cell>
+			<cell>
+				<row>
+					<cell class="bg-success">
+						<component type="Html">2.2.1</component>
+					</cell>
+				</row>
+				<row>
+					<cell class="bg-warning">
+						<component type="Html">2.2.2</component>
+					</cell>
+				</row>
+			</cell>
+		</row>
+
+		<row>
+			<cell class="col-8">
+				<component type="Html">3.1</component>
+			</cell>
+			<cell class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</cell>
+			<cell class="col-1">
+				<component type="Html">3.3</component>
+			</cell>
+		</row>
+	</grid>
+	<!-- end Structure components -->
+
+	<grid mode="fluid" class="rounded-lg border border-success mb-4">
+		<row class="border border-primary">
+			<cell class="bg-danger">
+				<component type="Html">1.1</component>
+			</cell>
+			<cell>
+				<component type="Html">1.2</component>
+			</cell>
+		</row>
+
+		<row>
+			<cell class="bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</cell>
+			<cell>
+				<row>
+					<cell class="bg-success">
+						<component type="Html">2.2.1</component>
+					</cell>
+				</row>
+				<row>
+					<cell class="bg-warning">
+						<component type="Html">2.2.2</component>
+					</cell>
+				</row>
+			</cell>
+		</row>
+
+		<row>
+			<cell class="col-8">
+				<component type="Html">3.1</component>
+			</cell>
+			<cell class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</cell>
+			<cell class="col-1">
+				<component type="Html">3.3</component>
+			</cell>
+		</row>
+	</grid>
+
+	<!-- Container Component -->
+	<component type="Html"><h1>Container component</h1></component>
+	<component class="container rounded-lg border border-success mb-4">
+		<component class="row border border-primary">
+			<component class="col bg-danger">
+				<component type="Html">1.1</component>
+			</component>
+			<component class="col">
+				<component type="Html">1.2</component>
+			</component>
+		</component>
+
+		<component class="row">
+			<component class="col bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</component>
+			<component class="col">
+				<component class="row">
+					<component class="col bg-success">
+						<component type="Html">2.2.1</component>
+					</component>
+				</component>
+				<component class="row">
+					<component class="col bg-warning">
+						<component type="Html">2.2.2</component>
+					</component>
+				</component>
+			</component>
+		</component>
+
+		<component class="row">
+			<component class="col-8">
+				<component type="Html">3.1</component>
+			</component>
+			<component class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</component>
+			<component class="col-1">
+				<component type="Html">3.3</component>
+			</component>
+		</component>
+	</component>
+
+	<component mode="fluid" class="rounded-lg border border-success mb-4">
+		<component class="row border border-primary">
+			<component class="col bg-danger">
+				<component type="Html">1.1</component>
+			</component>
+			<component class="col">
+				<component type="Html">1.2</component>
+			</component>
+		</component>
+
+		<component class="row">
+			<component class="col bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</component>
+			<component class="col">
+				<component class="row">
+					<component class="col bg-success">
+						<component type="Html">2.2.1</component>
+					</component>
+				</component>
+				<component class="row">
+					<component class="col bg-warning">
+						<component type="Html">2.2.2</component>
+					</component>
+				</component>
+			</component>
+		</component>
+
+		<component class="row">
+			<component class="col-8">
+				<component type="Html">3.1</component>
+			</component>
+			<component class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</component>
+			<component class="col-1">
+				<component type="Html">3.3</component>
+			</component>
+		</component>
+	</component>
+	<!-- end Container Component -->
+
+	<!-- div -->
+	<component type="Html"><h1>div</h1></component>
+	<div class="container rounded-lg border border-success mb-4">
+		<div class="row border border-primary">
+			<div class="col bg-danger">
+				<component type="Html">1.1</component>
+			</div>
+			<div class="col">
+				<component type="Html">1.2</component>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col bg-success">
+						<component type="Html">2.2.1</component>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col bg-warning">
+						<component type="Html">2.2.2</component>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-8">
+				<component type="Html">3.1</component>
+			</div>
+			<div class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</div>
+			<div class="col-1">
+				<component type="Html">3.3</component>
+			</div>
+		</div>
+	</div>
+
+	<div class="rounded-lg border border-success mb-4">
+		<div class="row border border-primary">
+			<div class="col bg-danger">
+				<component type="Html">1.1</component>
+			</div>
+			<div class="col">
+				<component type="Html">1.2</component>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col bg-dark text-light col-3">
+				<component type="Html">2.1</component>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col bg-success">
+						<component type="Html">2.2.1</component>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col bg-warning">
+						<component type="Html">2.2.2</component>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-8">
+				<component type="Html">3.1</component>
+			</div>
+			<div class="col-3 border border-secondary bg-info">
+				<component type="Html">3.2</component>
+			</div>
+			<div class="col-1">
+				<component type="Html">3.3</component>
+			</div>
+		</div>
+	</div>
+	<!-- end div -->
+
+</structure>
