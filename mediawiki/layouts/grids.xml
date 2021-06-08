@@ -44,7 +44,6 @@
 			</cell>
 		</row>
 	</grid>
-	<!-- end Structure components -->
 
 	<grid mode="fluid" class="rounded-lg border border-success mb-4">
 		<row class="border border-primary">
@@ -86,6 +85,7 @@
 			</cell>
 		</row>
 	</grid>
+	<!-- end Structure components -->
 
 	<!-- Container Component -->
 	<component type="Html"><h1>Container component</h1></component>
