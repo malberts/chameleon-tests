@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.0/layout.rng">
+<structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.1/layout.rng">
+
+	<!-- Tests -->
+		<component class="abc" id="xx" />
+
+		<component type="Container" class="abc" id="xxx" />
+
+		<component type="Logo" class="def" />
+		<!-- <component type="Logo" class="def" id="fail"/> -->
+
+		<component type="NavbarHorizontal" class="xxx"/>
+		<!-- <component type="NavbarHorizontal" class="xxx" id="fail"/> -->
 
 	<!-- Structure components -->
-	<component type="Html"><h1>Structure components</h1></component>
-	<grid class="rounded-lg border border-success mb-4">
-		<row class="border border-primary">
-			<cell class="bg-danger">
+	<component type="Html"><![CDATA[
+		<h1>Structure components</h1>
+	]]></component>
+	<grid id="grid-1" class="rounded-lg border border-success mb-4">
+		<row id="row-1" class="border border-primary">
+			<cell id="cell-1" class="bg-danger">
 				<component type="Html">1.1</component>
 			</cell>
 			<cell>
@@ -88,10 +101,12 @@
 	</grid>
 
 	<!-- Container Component -->
-	<component type="Html"><h1>Container component</h1></component>
-	<component class="container rounded-lg border border-success mb-4">
-		<component class="row border border-primary">
-			<component class="col bg-danger">
+	<component type="Html"><![CDATA[
+		<h1>Container component</h1>
+	]]></component>
+	<component id="grid-2" class="container rounded-lg border border-success mb-4">
+		<component id="row-2" class="row border border-primary">
+			<component id="cell-2" class="col bg-danger">
 				<component type="Html">1.1</component>
 			</component>
 			<component class="col">
@@ -130,7 +145,7 @@
 		</component>
 	</component>
 
-	<component mode="fluid" class="rounded-lg border border-success mb-4">
+	<component class="container-fluid rounded-lg border border-success mb-4">
 		<component class="row border border-primary">
 			<component class="col bg-danger">
 				<component type="Html">1.1</component>
@@ -173,7 +188,7 @@
 	<!-- end Container Component -->
 
 	<!-- div -->
-	<component type="Html"><h1>div</h1></component>
+	<!-- <component type="Html"><h1>div</h1></component>
 	<div class="container rounded-lg border border-success mb-4">
 		<div class="row border border-primary">
 			<div class="col bg-danger">
@@ -215,7 +230,7 @@
 		</div>
 	</div>
 
-	<div class="rounded-lg border border-success mb-4">
+	<div class="container-fluid rounded-lg border border-success mb-4">
 		<div class="row border border-primary">
 			<div class="col bg-danger">
 				<component type="Html">1.1</component>
@@ -254,7 +269,8 @@
 				<component type="Html">3.3</component>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
 	<!-- end div -->
 
 </structure>
