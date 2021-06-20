@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.0/layout.rng">
+
+<structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.1/layout.rng">
 
 	<component type="NavbarHorizontal" class="bg-primary navbar-dark">
 		<modification type="Sticky"/>
 		<component type="Logo" position="head"/>
-		<component type="Html"><![CDATA[
-			<a class="navbar-brand" href="/">Chameleon Tests</a>
-		]]></component>
 		<component type="SearchBar" class="order-first order-cmln-0" position="right" buttons="go"/>
-		<component type="EchoIcons" position="right" />
-		<component type="PersonalTools" position="right" hideEchoLinks="yes" />
+		<component type="PersonalTools" position="right" showEcho="icons" />
 	</component>
 
 	<grid mode="fluid" class="flex-fill main-grid" id="main-grid" >
