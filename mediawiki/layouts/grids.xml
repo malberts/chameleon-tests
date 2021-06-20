@@ -3,15 +3,15 @@
 <structure xmlns="https://ProfessionalWiki.github.io/chameleon/schema/3.1/layout.rng">
 
 	<!-- Tests -->
-		<component class="abc" id="xx" />
+	<component class="abc" id="xx" />
 
-		<component type="Container" class="abc" id="xxx" />
+	<component type="Container" class="abc" id="xxx" />
 
-		<component type="Logo" class="def" />
-		<!-- <component type="Logo" class="def" id="fail"/> -->
+	<component type="Logo" class="def" />
+	<!-- <component type="Logo" class="def" id="fail"/> -->
 
-		<component type="NavbarHorizontal" class="xxx"/>
-		<!-- <component type="NavbarHorizontal" class="xxx" id="fail"/> -->
+	<component type="NavbarHorizontal" class="xxx"/>
+	<!-- <component type="NavbarHorizontal" class="xxx" id="fail"/> -->
 
 	<!-- Structure components -->
 	<component type="Html"><![CDATA[
